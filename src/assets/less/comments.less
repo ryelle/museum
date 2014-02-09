@@ -1,0 +1,55 @@
+.bypostauthor {}
+
+#comments {
+	border-top: 1px solid #eee;
+}
+
+.comments-title,
+#reply-title {
+	margin: @spacing 0;
+	color: @red;
+	.font-size(30);
+}
+
+ol.comment-list {
+	margin: 0;
+}
+
+.comment ul.children {
+	margin-left: @spacing;
+}
+
+ol.comment-list li,
+ul.children li {
+	list-style: none;
+}
+
+li.comment {
+	margin-bottom: @spacing;
+
+	.comment-meta {
+		.avatar {
+			float: left;
+			margin: 0 @spacing/2 @spacing/2 0;
+		}
+
+		.comment-metadata {
+			padding-top: @spacing/4;
+			margin-bottom: .25em;
+			.big-red-font;
+			.font-size(16);
+		}
+
+		.comment-author {
+			font-weight: @bold;
+
+			cite { font-style: normal; }
+			
+			a { color: @text; }
+		}
+	}
+
+	.comment-content {
+		clear: left;
+	}
+}

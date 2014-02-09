@@ -1,0 +1,26 @@
+.widget {
+	margin: 0 0 @spacing;
+	padding: 0 @spacing/2;
+
+	a {
+		color: @white;
+	}
+}
+
+/* Make sure select elements fit in widgets */
+.widget select {
+	max-width: 100%;
+}
+
+/* Search widget */
+.widget_search {
+	.search-field {
+		width: 100%;
+		
+		.box-sizing();
+	}
+
+	.search-submit {
+		display: none;
+	}
+}

@@ -1,0 +1,42 @@
+body {
+	background: @bg;
+}
+
+.site-content,
+.secondary-content {
+	margin: 0 auto @spacing;
+	padding: @spacing;
+	max-width: @page-width;
+
+	.box-sizing();
+}
+
+.single .hentry,
+.page .hentry, 
+.comments-area {
+	margin: @spacing 130px 0;
+}
+
+.site-content {
+	background: @white;
+}
+
+.navigation,
+#secondary {
+	clear: both;
+}
+
+#secondary {
+	color: @white;
+	background: @red;
+}
+
+.secondary-content {
+	overflow: hidden;
+	padding: @spacing @spacing/2;
+
+	.one-column {
+		float: left;
+		width: 50%;
+	}
+}

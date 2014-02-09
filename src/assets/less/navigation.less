@@ -1,0 +1,61 @@
+.site-main [class*="navigation"] {
+	overflow: hidden;
+}
+
+.navigation {
+	.nav-next, .nav-previous {
+		padding: @spacing/2 0;
+		font-weight: @bold;
+		text-align: center;
+		text-transform: uppercase;
+		background: @bg;
+	}
+}
+
+.navigation.both-links {
+	.nav-previous {
+		float: left;
+		width: 50%;
+	}
+
+	.nav-next {
+		float: right;
+		width: 50%;
+	}
+}
+
+.single, .page {
+	.navigation {
+		margin: 0 130px;
+		.big-red-font;
+	}
+
+	[rel='prev'] {
+		display: inline-block;
+		float: left;
+		margin: 10px 0;
+	}
+
+	[rel='next'] {
+		display: inline-block;
+		float: right;
+		margin: 10px 0;
+		text-align: right;
+	}
+}
+
+.comment-navigation {
+	margin: 0 0 @spacing/2;
+	.big-red-font;
+	
+	.nav-previous {
+		float: left;
+		width: 50%;
+	}
+
+	.nav-next {
+		float: right;
+		text-align: right;
+		width: 50%;
+	}
+}

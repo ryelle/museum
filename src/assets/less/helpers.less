@@ -1,0 +1,110 @@
+/* Alignment */
+.alignleft {
+	display: inline;
+	float: left;
+	margin-right: 1.5em;
+}
+.alignright {
+	display: inline;
+	float: right;
+	margin-left: 1.5em;
+}
+.aligncenter {
+	clear: both;
+	display: block;
+	margin: 0 auto;
+}
+
+/* Text meant only for screen readers */
+.screen-reader-text {
+	clip: rect(1px, 1px, 1px, 1px);
+	position: absolute !important;
+
+	&:hover,
+	&:active,
+	&:focus {
+		background-color: #f1f1f1;
+		border-radius: 3px;
+		box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+		clip: auto !important;
+		color: #21759b;
+		display: block;
+		font-size: 14px;
+		font-weight: bold;
+		height: auto;
+		left: 5px;
+		line-height: normal;
+		padding: 15px 23px 14px;
+		text-decoration: none;
+		top: 5px;
+		width: auto;
+		z-index: 100000; /* Above WP toolbar */
+	}
+}
+
+/* Clearing */
+.clear:before,
+.clear:after,
+.entry-content:before,
+.entry-content:after,
+.comment-content:before,
+.comment-content:after,
+.site-header:before,
+.site-header:after,
+.site-content:before,
+.site-content:after,
+.site-footer:before,
+.site-footer:after {
+	content: '';
+	display: table;
+}
+
+.clear:after,
+.entry-content:after,
+.comment-content:after,
+.site-header:after,
+.site-content:after,
+.site-footer:after {
+	clear: both;
+}
+
+/**
+ * Genericons
+ */
+.genericon {
+	@size:21px;
+
+	display: inline-block;
+	width: @size;
+	height: @size;
+	-webkit-font-smoothing: antialiased;
+	font-size: @size;
+	line-height: 1;
+	font-family: 'Genericons';
+	text-decoration: inherit;
+	font-weight: normal;
+	font-style: normal;
+	vertical-align: middle;
+}
+
+/**
+ * IE7 and IE6 hacks
+ */
+.genericon {
+	*overflow: auto;
+	*zoom: 1;
+	*display: inline;
+}
+
+/**
+ * Individual icons
+ */
+.genericon-comment:before {         content: '\f300'; }
+.genericon-category:before {        content: '\f301'; }
+.genericon-tag:before {             content: '\f302'; }
+.genericon-time:before {            content: '\f303'; }
+.genericon-user:before {            content: '\f304'; }
+.genericon-day:before {             content: '\f305'; }
+.genericon-week:before {            content: '\f306'; }
+.genericon-month:before {           content: '\f307'; }
+.genericon-pinned:before {          content: '\f308'; }

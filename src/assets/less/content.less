@@ -1,0 +1,215 @@
+.sticky { /*! Not used in this theme. */ }
+
+.entry-header {
+	h2 {
+		line-height: 1;
+		clear: none;
+	}
+
+	p {
+		margin: @spacing/4 0 0;
+	}
+}
+
+.entry-content,
+.entry-summary {
+	.font-size(17);
+	line-height: 1.7;
+	color: @text;
+
+	p {
+		margin-bottom: @spacing/2;
+	}
+}
+
+.entry-meta {
+	margin: @spacing/2 0 0;
+	.big-red-font;
+	color: @text;
+
+	.entry-author,
+	.entry-taxes {
+		display: inline-block;
+	}
+
+	.entry-taxes {
+		float: right;
+		text-align: right;
+
+		.genericon-tag {
+			margin-left: @spacing/2;
+		}
+	}
+}
+
+.read-more {
+	display: none;
+	float: right;
+	font-family: @heading-font;
+	.font-size(@read-more-size);
+	font-style: italic;
+	font-weight: @bold;
+	text-transform: uppercase;
+}
+
+.byline,
+.updated {
+	display: none;
+}
+
+.single .byline,
+.group-blog .byline {
+	display: inline;
+}
+
+.page-links {
+	clear: both;
+	margin: 0 0 @spacing;
+}
+
+/* @group Home, Archive Pages */
+.blog, .archive {
+	.hentry {
+		margin: 0 0 @spacing;
+		padding: @spacing/2;
+		width: 48%;
+		background: @black;
+
+		.box-sizing();
+
+		&:nth-child(even){
+			float: left;
+			clear: both;
+		}
+
+		&:nth-child(odd){
+			float: right;
+		}
+
+		&:first-child {
+			float: none;
+			width: 100%;
+
+			.entry-title {
+				.font-size( @featured-title-size );
+			}
+
+			.entry-excerpt,
+			.read-more {
+				display: block;
+			}
+		}
+
+		.entry-header {
+			padding: @spacing/2;
+			color: @white;
+			background: fade( @red, 85% );
+
+			transition: opacity .25s;
+
+			a { color: @white; }
+		}
+	}
+
+	.with-image {
+		position: relative;
+		padding: 0;
+
+		.entry-image { text-align: center; }
+
+		.entry-header {
+			position: absolute;
+			bottom: @spacing/2;
+			left: @spacing/2;
+			right: @spacing/2;
+			opacity: 0;
+
+			.entry-title:after {
+				content: ' \203A';
+			}
+		}
+
+		&:hover .entry-header {
+			opacity: 1;
+		}
+
+		.entry-excerpt {
+			display: none;
+		}
+	}
+}
+/* @end */
+
+/* @group Archive */
+
+.page-header {
+	margin: 0 0 @spacing;
+	border-bottom: 1px solid #eeeeee;
+
+	.page-title {
+		margin: 0;
+		padding: 0 0 @spacing/2;
+		color: @red;
+	}
+
+	p {
+		margin: 0 0 @spacing/2;
+	}
+}
+/* @end */
+
+/* @group Single */
+.single,
+.page {
+	.entry-title {
+		margin: 0 0 @spacing;
+		padding: 0 0 @spacing/2;
+		color: @red;
+		border-bottom: 1px solid #eeeeee;
+	}
+}
+/* @end */
+
+/* @group Galleries */
+.wp-caption {
+	border: 1px solid #ccc;
+	margin-bottom: @spacing;
+	max-width: 100%;
+
+	img[class*="wp-image-"] {
+		display: block;
+		margin: 1.2% auto 0;
+		max-width: 98%;
+	}
+
+	.wp-caption-text {
+		margin: 0.8075em 0;
+	}
+}
+
+.wp-caption-text {
+	text-align: center;
+}
+
+.site-main .gallery {
+	margin-bottom: @spacing;
+
+	a img {
+		border: none;
+		height: auto;
+		max-width: 90%;
+	}
+
+	dd {
+		margin: 0;
+	}
+}
+
+.gallery-caption {}
+
+.gallery-columns-4 .gallery-item {
+	img {}
+}
+/* @end */
+
+
