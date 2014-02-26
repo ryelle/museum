@@ -23,6 +23,7 @@ module.exports = function(grunt) {
 				]
 			}
 		},
+
 		copy: {
 			all: {
 				files: [{
@@ -41,6 +42,7 @@ module.exports = function(grunt) {
 				}]
 			}
 		},
+
 		less: {
 			dist: {
 				expand: true,
@@ -57,6 +59,7 @@ module.exports = function(grunt) {
 				src: [ 'style.less', 'editor-style.less' ]
 			}
 		},
+
 		concat: {
 			dist: {
 				src: [
@@ -76,7 +79,7 @@ module.exports = function(grunt) {
 			main: {
 				options: {
 					//mode: 'zip',
-					archive: 'flounder.zip'
+					archive: 'museum.zip'
 				},
 				files: [
 					{expand: true, cwd: BUILD_DIR, src: ['**'], dest: '/'}
@@ -85,7 +88,7 @@ module.exports = function(grunt) {
 		},
 
 		watch: {
-			colors: {
+			dev: {
 				files: [SOURCE_DIR + 'assets/**/*.less'],
 				tasks: ['less:dev']
 			}
@@ -96,6 +99,7 @@ module.exports = function(grunt) {
 
 	// Build task.
 	grunt.registerTask('build', ['clean:all', 'copy:all', 'less:dist', 'concat:dist', 'clean:dist', 'compress:main']);
+
 	// Dev build
 	grunt.registerTask('dev', ['less:dev', 'concat:dev' ]);
 
