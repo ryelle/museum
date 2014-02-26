@@ -58,7 +58,7 @@ add_action( 'after_setup_theme', 'museum_setup' );
  */
 function museum_widgets_init() {
 	register_sidebar( array(
-		'name'          => __( 'Left Sidebar', 'museum' ),
+		'name'          => __( 'Left Footer Area', 'museum' ),
 		'id'            => 'sidebar-1',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside>',
@@ -66,7 +66,7 @@ function museum_widgets_init() {
 		'after_title'   => '</h1>',
 	) );
 	register_sidebar( array(
-		'name'          => __( 'Right Sidebar', 'museum' ),
+		'name'          => __( 'Right Footer Area', 'museum' ),
 		'id'            => 'sidebar-2',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside>',
@@ -82,9 +82,9 @@ add_action( 'widgets_init', 'museum_widgets_init' );
 function museum_scripts() {
 	wp_enqueue_style( 'museum-style', get_stylesheet_uri() );
 
-	wp_enqueue_script( 'museum-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
+	wp_enqueue_script( 'museum-navigation', get_template_directory_uri() . '/assets/js/navigation.js', array(), '20120206', true );
 
-	wp_enqueue_script( 'museum-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20130115', true );
+	wp_enqueue_script( 'museum-skip-link-focus-fix', get_template_directory_uri() . '/assets/js/skip-link-focus-fix.js', array(), '20130115', true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
@@ -95,8 +95,8 @@ add_action( 'wp_enqueue_scripts', 'museum_scripts' );
 /**
  * Returns the Google font stylesheet URL, if available.
  *
- * The use of Quattrocento Sans and Playfair Display by default is 
- * localized. For languages that use characters not supported by either 
+ * The use of Quattrocento Sans and Playfair Display by default is
+ * localized. For languages that use characters not supported by either
  * font, the font can be disabled.
  *
  * @since Museum 1.0
@@ -107,13 +107,13 @@ function museum_fonts_url() {
 	$fonts_url = '';
 
 	/* Translators: If there are characters in your language that are not
-	 * supported by Quattrocento Sans, translate this to 'off'. Do not 
+	 * supported by Quattrocento Sans, translate this to 'off'. Do not
 	 * translate into your own language.
 	 */
 	$quattrocento_sans = _x( 'on', 'Quattrocento Sans font: on or off', 'museum' );
 
 	/* Translators: If there are characters in your language that are not
-	 * supported by Playfair Display, translate this to 'off'. Do not 
+	 * supported by Playfair Display, translate this to 'off'. Do not
 	 * translate into your own language.
 	 */
 	$playfair_display = _x( 'on', 'Playfair Display font: on or off', 'museum' );
@@ -182,6 +182,36 @@ function museum_mce_css( $mce_css ) {
 	return $mce_css;
 }
 add_filter( 'mce_css', 'museum_mce_css' );
+
+
+/**
+ * Count the number of footer sidebars to enable dynamic classes for the footer.
+ *
+ * @since Museum 1.0
+ */
+function museum_footer_class() {
+	$count = 0;
+
+	if ( is_active_sidebar( 'sidebar-1' ) )
+		$count++;
+
+	if ( is_active_sidebar( 'sidebar-2' ) )
+		$count++;
+
+	$class = '';
+
+	switch ( $count ) {
+		case '1':
+			$class = 'one-column';
+			break;
+		case '2':
+			$class = 'two-column';
+			break;
+	}
+
+	if ( $class )
+		echo $class;
+}
 
 
 /**

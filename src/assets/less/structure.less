@@ -11,8 +11,13 @@ body {
 	.box-sizing();
 }
 
-.single .hentry,
-.page .hentry, 
+.secondary-content {
+	margin-bottom: 0;
+}
+
+body.single .hentry,
+body.page .hentry,
+body.search-results .site-main,
 .comments-area {
 	margin: @spacing 130px 0;
 }
@@ -34,9 +39,18 @@ body {
 .secondary-content {
 	overflow: hidden;
 	padding: @spacing @spacing/2;
+}
 
-	.one-column {
-		float: left;
-		width: 50%;
-	}
+.one-column .sidebar {
+	float: none;
+	width: 100%;
+}
+
+.two-column .sidebar {
+	float: left;
+	width: 50%;
+}
+
+.site-footer {
+	padding: @spacing * .75;
 }

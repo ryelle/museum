@@ -1,3 +1,21 @@
+#infinite-handle {
+	clear: both;
+	span {
+		display: block;
+		padding: @spacing/2 0;
+		font-size: inherit;
+		font-weight: @bold;
+		text-align: center;
+		text-transform: uppercase;
+		color: @black;
+		background: @bg;
+	}
+}
+
+.infinite-loader {
+	clear: both;
+}
+
 /* Globally hidden elements when Infinite Scroll is supported and in use. */
 .infinite-scroll .paging-navigation, /* Older / Newer Posts Navigation (always hidden) */
 .infinite-scroll.neverending .site-footer { /* Theme Footer (when set to scrolling) */

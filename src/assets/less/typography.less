@@ -43,6 +43,22 @@ h4 {
 	.font-size(@heading-size);
 }
 
+blockquote {
+	p:first-child {
+		quotes: '"' '"';
+		&:before { content: open-quote }
+	}
+	p:last-child {
+		quotes: '"' '"';
+		&:after { content: close-quote }
+	}
+}
+q {
+	quotes: '"' '"';
+	&:before { content: open-quote }
+	&:after { content: close-quote }
+}
+
 /* Links */
 a {
 	color: @black;
@@ -55,6 +71,6 @@ a {
 	&:hover,
 	&:focus,
 	&:active {
-		color: midnightblue;
+		color: @red;
 	}
 }

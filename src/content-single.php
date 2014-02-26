@@ -27,7 +27,7 @@
 
 	<footer class="entry-meta">
 		<div class="entry-author"><?php museum_posted_on(); ?></div>
-		
+
 		<div class="entry-taxes"><?php
 			/* translators: used between list items, there is a space after the comma */
 			$category_list = get_the_category_list( ' &nbsp; &nbsp; ' );

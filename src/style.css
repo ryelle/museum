@@ -101,8 +101,6 @@ td {
   vertical-align: baseline;
 }
 html {
-  font-size: 62.5%;
-  /* Corrects text resizing oddly in IE6/7 when body font-size is set using em units http://clagnut.com/blog/348/#c790 */
   overflow-y: scroll;
   /* Keeps page centered in all browsers regardless of content height */
   -webkit-text-size-adjust: 100%;
@@ -170,6 +168,11 @@ iframe,
 object {
   max-width: 100%;
 }
+/* Force a line wrap on long words */
+* {
+  -ms-word-wrap: break-word;
+  word-wrap: break-word;
+}
 .page-content img.wp-smiley,
 .entry-content img.wp-smiley,
 .comment-content img.wp-smiley {
@@ -177,10 +180,6 @@ object {
   margin-bottom: 0;
   margin-top: 0;
   padding: 0;
-}
-.entry-title,
-.comment-content a {
-  word-wrap: break-word;
 }
 /* =Global
 ----------------------------------------------- */
@@ -257,7 +256,6 @@ pre {
   background: #eee;
   font-family: "Courier 10 Pitch", Courier, monospace;
   font-size: 15px;
-  font-size: 1.5rem;
   line-height: 1.6;
   margin-bottom: 1.6em;
   max-width: 100%;
@@ -562,7 +560,7 @@ textarea {
 body {
   font-family: 'Quattrocento Sans';
   font-size: 16px;
-  font-size: 1.6rem;
+  font-size: 1rem;
 }
 /* Headings */
 h1,
@@ -573,19 +571,19 @@ h5,
 h6 {
   font-family: 'Playfair Display';
   font-size: 16px;
-  font-size: 1.6rem;
+  font-size: 1rem;
 }
 h1 {
   font-size: 30px;
-  font-size: 3rem;
+  font-size: 1.875rem;
 }
 h2 {
   font-size: 20px;
-  font-size: 2rem;
+  font-size: 1.25rem;
 }
 h3 {
   font-size: 16px;
-  font-size: 1.6rem;
+  font-size: 1rem;
 }
 h4 {
   font-weight: 700;
@@ -593,7 +591,28 @@ h4 {
 .site-title,
 .entry-title {
   font-size: 36px;
-  font-size: 3.6rem;
+  font-size: 2.25rem;
+}
+blockquote p:first-child {
+  quotes: '"' '"';
+}
+blockquote p:first-child:before {
+  content: open-quote;
+}
+blockquote p:last-child {
+  quotes: '"' '"';
+}
+blockquote p:last-child:after {
+  content: close-quote;
+}
+q {
+  quotes: '"' '"';
+}
+q:before {
+  content: open-quote;
+}
+q:after {
+  content: close-quote;
 }
 /* Links */
 a {
@@ -606,7 +625,7 @@ a:visited {
 a:hover,
 a:focus,
 a:active {
-  color: midnightblue;
+  color: #a52020;
 }
 body {
   background: #f5f5f5;
@@ -620,8 +639,12 @@ body {
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
-.single .hentry,
-.page .hentry,
+.secondary-content {
+  margin-bottom: 0;
+}
+body.single .hentry,
+body.page .hentry,
+body.search-results .site-main,
 .comments-area {
   margin: 40px 130px 0;
 }
@@ -640,9 +663,16 @@ body {
   overflow: hidden;
   padding: 40px 20px;
 }
-.secondary-content .one-column {
+.one-column .sidebar {
+  float: none;
+  width: 100%;
+}
+.two-column .sidebar {
   float: left;
   width: 50%;
+}
+.site-footer {
+  padding: 30px;
 }
 /* =Menu
 ----------------------------------------------- */
@@ -715,9 +745,23 @@ body {
 .site-title {
   margin: 60px 0;
   font-size: 36px;
-  font-size: 3.6rem;
+  font-size: 2.25rem;
   letter-spacing: 1px;
   text-transform: uppercase;
+}
+.site-footer {
+  text-align: center;
+  color: #ffffff;
+  background-color: #222222;
+}
+.site-footer a {
+  font-weight: bold;
+  color: #ffffff;
+}
+.site-footer a:hover,
+.site-footer a:active,
+.site-footer a:focus {
+  color: rgba(255, 255, 255, 0.75);
 }
 .sticky {
   /*! Not used in this theme. */
@@ -732,7 +776,7 @@ body {
 .entry-content,
 .entry-summary {
   font-size: 17px;
-  font-size: 1.7rem;
+  font-size: 1.0625rem;
   line-height: 1.7;
   color: #444444;
 }
@@ -745,7 +789,7 @@ body {
   font-family: 'Playfair Display';
   font-style: italic;
   font-size: 14px;
-  font-size: 1.4rem;
+  font-size: 0.875rem;
   color: #a52020;
   color: #444444;
 }
@@ -768,7 +812,7 @@ body {
   float: right;
   font-family: 'Playfair Display';
   font-size: 16px;
-  font-size: 1.6rem;
+  font-size: 1rem;
   font-style: italic;
   font-weight: 700;
   text-transform: uppercase;
@@ -786,8 +830,8 @@ body {
   margin: 0 0 40px;
 }
 /* @group Home, Archive Pages */
-.blog .hentry,
-.archive .hentry {
+body.blog .hentry,
+body.archive .hentry {
   margin: 0 0 40px;
   padding: 20px;
   width: 48%;
@@ -796,70 +840,78 @@ body {
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
-.blog .hentry:nth-child(even),
-.archive .hentry:nth-child(even) {
+body.blog .hentry:nth-of-type(even),
+body.archive .hentry:nth-of-type(even) {
   float: left;
   clear: both;
 }
-.blog .hentry:nth-child(odd),
-.archive .hentry:nth-child(odd) {
+body.blog .hentry:nth-of-type(odd),
+body.archive .hentry:nth-of-type(odd) {
   float: right;
 }
-.blog .hentry:first-child,
-.archive .hentry:first-child {
+body.blog .hentry:first-of-type,
+body.archive .hentry:first-of-type {
   float: none;
   width: 100%;
 }
-.blog .hentry:first-child .entry-title,
-.archive .hentry:first-child .entry-title {
-  font-size: 30px;
-  font-size: 3rem;
+body.blog .hentry:first-of-type .entry-header,
+body.archive .hentry:first-of-type .entry-header {
+  opacity: 1;
 }
-.blog .hentry:first-child .entry-excerpt,
-.archive .hentry:first-child .entry-excerpt,
-.blog .hentry:first-child .read-more,
-.archive .hentry:first-child .read-more {
+body.blog .hentry:first-of-type .entry-title,
+body.archive .hentry:first-of-type .entry-title {
+  font-size: 30px;
+  font-size: 1.875rem;
+}
+body.blog .hentry:first-of-type .entry-excerpt,
+body.archive .hentry:first-of-type .entry-excerpt,
+body.blog .hentry:first-of-type .read-more,
+body.archive .hentry:first-of-type .read-more {
   display: block;
 }
-.blog .hentry .entry-header,
-.archive .hentry .entry-header {
+body.blog .hentry .entry-header,
+body.archive .hentry .entry-header {
   padding: 20px;
   color: #ffffff;
   background: rgba(165, 32, 32, 0.85);
   transition: opacity .25s;
 }
-.blog .hentry .entry-header a,
-.archive .hentry .entry-header a {
+body.blog .hentry .entry-header a,
+body.archive .hentry .entry-header a {
   color: #ffffff;
 }
-.blog .with-image,
-.archive .with-image {
+body.blog .with-image,
+body.archive .with-image {
   position: relative;
   padding: 0;
 }
-.blog .with-image .entry-image,
-.archive .with-image .entry-image {
+body.blog .with-image .entry-image,
+body.archive .with-image .entry-image {
   text-align: center;
 }
-.blog .with-image .entry-header,
-.archive .with-image .entry-header {
+body.blog .with-image .entry-header,
+body.archive .with-image .entry-header {
   position: absolute;
   bottom: 20px;
   left: 20px;
   right: 20px;
   opacity: 0;
 }
-.blog .with-image .entry-header .entry-title:after,
-.archive .with-image .entry-header .entry-title:after {
+body.blog .with-image .entry-header .entry-title:after,
+body.archive .with-image .entry-header .entry-title:after {
   content: ' \203A';
 }
-.blog .with-image:hover .entry-header,
-.archive .with-image:hover .entry-header {
+body.blog .with-image:hover .entry-header,
+body.archive .with-image:hover .entry-header {
   opacity: 1;
 }
-.blog .with-image .entry-excerpt,
-.archive .with-image .entry-excerpt {
+body.blog .with-image .entry-excerpt,
+body.archive .with-image .entry-excerpt {
   display: none;
+}
+body.blog #main,
+body.archive #main {
+  overflow: hidden;
 }
 /* @end */
 /* @group Archive */
@@ -876,9 +928,19 @@ body {
   margin: 0 0 20px;
 }
 /* @end */
+/* @group Search Results */
+body.search-results .hentry {
+  margin: 0 0 40px;
+}
+body.search-results .entry-title {
+  margin-bottom: 20px;
+  font-size: 30px;
+  font-size: 1.875rem;
+}
+/* @end */
 /* @group Single */
-.single .entry-title,
-.page .entry-title {
+body.single .entry-title,
+body.page .entry-title {
   margin: 0 0 40px;
   padding: 0 0 20px;
   color: #a52020;
@@ -914,6 +976,20 @@ body {
   margin: 0;
 }
 /* @end */
+/* @group Search Form */
+.search-form {
+  margin-bottom: 20px;
+}
+.search-form input[type="search"] {
+  width: 100%;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.search-form .search-submit {
+  display: none;
+}
+/* @end */
 /* =Asides
 ----------------------------------------------- */
 .blog .format-aside .entry-title,
@@ -947,7 +1023,7 @@ body {
   font-family: 'Playfair Display';
   font-style: italic;
   font-size: 14px;
-  font-size: 1.4rem;
+  font-size: 0.875rem;
   color: #a52020;
 }
 .single .navigation a,
@@ -972,7 +1048,7 @@ body {
   font-family: 'Playfair Display';
   font-style: italic;
   font-size: 14px;
-  font-size: 1.4rem;
+  font-size: 0.875rem;
   color: #a52020;
 }
 .comment-navigation a {
@@ -997,7 +1073,7 @@ body {
   margin: 40px 0;
   color: #a52020;
   font-size: 30px;
-  font-size: 3rem;
+  font-size: 1.875rem;
 }
 ol.comment-list {
   margin: 0;
@@ -1022,10 +1098,10 @@ li.comment .comment-meta .comment-metadata {
   font-family: 'Playfair Display';
   font-style: italic;
   font-size: 14px;
-  font-size: 1.4rem;
+  font-size: 0.875rem;
   color: #a52020;
   font-size: 16px;
-  font-size: 1.6rem;
+  font-size: 1rem;
 }
 li.comment .comment-meta .comment-metadata a {
   color: #a52020;
@@ -1067,6 +1143,22 @@ li.comment .comment-content {
 }
 /* =Infinite Scroll
 ----------------------------------------------- */
+#infinite-handle {
+  clear: both;
+}
+#infinite-handle span {
+  display: block;
+  padding: 20px 0;
+  font-size: inherit;
+  font-weight: 700;
+  text-align: center;
+  text-transform: uppercase;
+  color: #222222;
+  background: #f5f5f5;
+}
+.infinite-loader {
+  clear: both;
+}
 /* Globally hidden elements when Infinite Scroll is supported and in use. */
 .infinite-scroll .paging-navigation,
 .infinite-scroll.neverending .site-footer {
