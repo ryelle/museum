@@ -808,6 +808,12 @@ body.search-results .site-main,
 .entry-meta .entry-taxes .genericon-tag {
   margin-left: 20px;
 }
+.format-icon {
+  /* Add format-icon styles here, once they exist */
+}
+.video-icon {
+  /* Add the video icon (image? svg?) */
+}
 .read-more {
   display: none;
   float: right;
