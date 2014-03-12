@@ -722,6 +722,7 @@ body.search-results .site-main,
 }
 .main-navigation ul ul a {
   width: 200px;
+  padding: 10px 20px;
 }
 /* Small menu */
 .menu-toggle {
