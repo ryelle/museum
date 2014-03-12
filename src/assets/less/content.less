@@ -30,6 +30,7 @@
 	.entry-author,
 	.entry-taxes {
 		display: inline-block;
+		max-width: 50%;
 	}
 
 	.entry-taxes {
@@ -201,8 +202,10 @@ body.page {
 
 /* @group Galleries */
 .wp-caption {
-	border: 1px solid #ccc;
+	.box-sizing;
+	border: 1px solid #eee;
 	margin-bottom: @spacing;
+	padding: 5px 5px 0;
 	max-width: 100%;
 
 	img[class*="wp-image-"] {
@@ -218,6 +221,8 @@ body.page {
 
 .wp-caption-text {
 	text-align: center;
+	font-style: italic;
+	.font-size( 14 );
 }
 
 .site-main .gallery {

@@ -800,6 +800,7 @@ body.search-results .site-main,
 .entry-meta .entry-author,
 .entry-meta .entry-taxes {
   display: inline-block;
+  max-width: 50%;
 }
 .entry-meta .entry-taxes {
   float: right;
@@ -956,8 +957,12 @@ body.page .entry-title {
 /* @end */
 /* @group Galleries */
 .wp-caption {
-  border: 1px solid #ccc;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  border: 1px solid #eee;
   margin-bottom: 40px;
+  padding: 5px 5px 0;
   max-width: 100%;
 }
 .wp-caption img[class*="wp-image-"] {
@@ -970,6 +975,9 @@ body.page .entry-title {
 }
 .wp-caption-text {
   text-align: center;
+  font-style: italic;
+  font-size: 14px;
+  font-size: 0.875rem;
 }
 .site-main .gallery {
   margin-bottom: 40px;
