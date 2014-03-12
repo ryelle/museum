@@ -21,6 +21,7 @@ if ( ! function_exists( 'museum_setup' ) ) :
  * as indicating support for post thumbnails.
  */
 function museum_setup() {
+	global $content_width;
 
 	/*
 	 * Make theme available for translation.
@@ -34,12 +35,14 @@ function museum_setup() {
 	add_theme_support( 'automatic-feed-links' );
 
 	/*
-	 * Enable support for Post Thumbnails on posts and pages.
+	 * Enable support for Post Thumbnails on posts, pages, and audio/video attachments
 	 *
 	 * @link http://codex.wordpress.org/Function_Reference/add_theme_support#Post_Thumbnails
+	 * @link http://make.wordpress.org/core/2014/02/20/audio-video-2-0-update-playlists/
 	 */
-	global $content_width;
-	add_theme_support( 'post-thumbnails' );
+	add_post_type_support( 'attachment:audio', 'thumbnail' );
+	add_post_type_support( 'attachment:video', 'thumbnail' );
+	add_theme_support( 'post-thumbnails', array( 'post', 'page', 'attachment:audio', 'attachment:video' ) );
 	set_post_thumbnail_size( $content_width, $content_width, true );
 
 	// This theme uses wp_nav_menu() in one location.
