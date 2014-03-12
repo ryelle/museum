@@ -27,6 +27,7 @@
 
 	a {
 		color: @red;
+
 		&:hover, &:active, &:focus {
 			color: darken( @red, 20% );
 		}
@@ -99,14 +100,27 @@ body.archive {
 		.box-sizing();
 
 		&:nth-of-type(even){
+			float: right;
+			clear: none;
+		}
+
+		&:nth-of-type(odd){
 			float: left;
 			clear: both;
 		}
 
-		&:nth-of-type(odd){
-			float: right;
-		}
+		.entry-header {
+			padding: @spacing/2;
+			color: @white;
+			background: fade( @red, 85% );
 
+			transition: opacity .25s;
+
+			a { color: @white; }
+		}
+	}
+
+	&:not(.paged) .hentry {
 		&:first-of-type {
 			float: none;
 			width: 100%;
@@ -125,14 +139,14 @@ body.archive {
 			}
 		}
 
-		.entry-header {
-			padding: @spacing/2;
-			color: @white;
-			background: fade( @red, 85% );
+		&:nth-of-type(even){
+			float: left;
+			clear: both;
+		}
 
-			transition: opacity .25s;
-
-			a { color: @white; }
+		&:nth-of-type(odd){
+			float: right;
+			clear: none;
 		}
 	}
 

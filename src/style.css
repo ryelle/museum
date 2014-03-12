@@ -870,32 +870,13 @@ body.archive .hentry {
 }
 body.blog .hentry:nth-of-type(even),
 body.archive .hentry:nth-of-type(even) {
-  float: left;
-  clear: both;
+  float: right;
+  clear: none;
 }
 body.blog .hentry:nth-of-type(odd),
 body.archive .hentry:nth-of-type(odd) {
-  float: right;
-}
-body.blog .hentry:first-of-type,
-body.archive .hentry:first-of-type {
-  float: none;
-  width: 100%;
-}
-body.blog .hentry:first-of-type .entry-header,
-body.archive .hentry:first-of-type .entry-header {
-  opacity: 1;
-}
-body.blog .hentry:first-of-type .entry-title,
-body.archive .hentry:first-of-type .entry-title {
-  font-size: 30px;
-  font-size: 1.875rem;
-}
-body.blog .hentry:first-of-type .entry-excerpt,
-body.archive .hentry:first-of-type .entry-excerpt,
-body.blog .hentry:first-of-type .read-more,
-body.archive .hentry:first-of-type .read-more {
-  display: block;
+  float: left;
+  clear: both;
 }
 body.blog .hentry .entry-header,
 body.archive .hentry .entry-header {
@@ -907,6 +888,36 @@ body.archive .hentry .entry-header {
 body.blog .hentry .entry-header a,
 body.archive .hentry .entry-header a {
   color: #ffffff;
+}
+body.blog:not(.paged) .hentry:first-of-type,
+body.archive:not(.paged) .hentry:first-of-type {
+  float: none;
+  width: 100%;
+}
+body.blog:not(.paged) .hentry:first-of-type .entry-header,
+body.archive:not(.paged) .hentry:first-of-type .entry-header {
+  opacity: 1;
+}
+body.blog:not(.paged) .hentry:first-of-type .entry-title,
+body.archive:not(.paged) .hentry:first-of-type .entry-title {
+  font-size: 30px;
+  font-size: 1.875rem;
+}
+body.blog:not(.paged) .hentry:first-of-type .entry-excerpt,
+body.archive:not(.paged) .hentry:first-of-type .entry-excerpt,
+body.blog:not(.paged) .hentry:first-of-type .read-more,
+body.archive:not(.paged) .hentry:first-of-type .read-more {
+  display: block;
+}
+body.blog:not(.paged) .hentry:nth-of-type(even),
+body.archive:not(.paged) .hentry:nth-of-type(even) {
+  float: left;
+  clear: both;
+}
+body.blog:not(.paged) .hentry:nth-of-type(odd),
+body.archive:not(.paged) .hentry:nth-of-type(odd) {
+  float: right;
+  clear: none;
 }
 body.blog .with-image,
 body.archive .with-image {
