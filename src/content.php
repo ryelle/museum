@@ -23,7 +23,11 @@
 
 	<header class="entry-header">
 		<a href="<?php the_permalink(); ?>" class="read-more"><?php echo __( 'Read Post', 'museum' ); ?> &rsaquo;</a>
-		<h2 class="entry-title"><a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a></h2>
-		<div class="entry-excerpt"><?php the_excerpt(); ?></div>
+		<?php if ( get_the_title() ) : ?>
+			<h2 class="entry-title"><a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a></h2>
+			<div class="entry-excerpt"><?php the_excerpt(); ?></div>
+		<?php else: ?>
+			<div class="entry-excerpt no-title"><a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_excerpt(); ?></a></div>
+		<?php endif; ?>
 	</header><!-- .entry-header -->
 </article><!-- #post-## -->

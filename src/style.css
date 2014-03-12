@@ -774,6 +774,9 @@ body.search-results .site-main,
 .entry-header p {
   margin: 10px 0 0;
 }
+.entry-header .no-title p {
+  margin-top: 0;
+}
 .entry-content,
 .entry-summary {
   font-size: 17px;
