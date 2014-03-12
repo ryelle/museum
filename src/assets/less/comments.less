@@ -44,12 +44,22 @@ li.comment {
 			font-weight: @bold;
 
 			cite { font-style: normal; }
-			
+
 			a { color: @text; }
 		}
 	}
 
 	.comment-content {
 		clear: left;
+	}
+}
+
+.comment-respond {
+	a {
+		color: @red;
+
+		&:hover, &:active, &:focus {
+			color: darken( @red, 20% );
+		}
 	}
 }

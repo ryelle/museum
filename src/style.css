@@ -788,6 +788,18 @@ body.search-results .site-main,
 .entry-summary p {
   margin-bottom: 20px;
 }
+.entry-content a,
+.entry-summary a {
+  color: #a52020;
+}
+.entry-content a:hover,
+.entry-summary a:hover,
+.entry-content a:active,
+.entry-summary a:active,
+.entry-content a:focus,
+.entry-summary a:focus {
+  color: #500f0f;
+}
 .entry-meta {
   margin: 20px 0 0;
   font-family: 'Playfair Display';
@@ -799,6 +811,11 @@ body.search-results .site-main,
 }
 .entry-meta a {
   color: #a52020;
+}
+.entry-meta a:hover,
+.entry-meta a:active,
+.entry-meta a:focus {
+  color: #500f0f;
 }
 .entry-meta .entry-author,
 .entry-meta .entry-taxes {
@@ -1048,6 +1065,14 @@ body.page .entry-title {
 .page .navigation a {
   color: #a52020;
 }
+.single .navigation a:hover,
+.page .navigation a:hover,
+.single .navigation a:active,
+.page .navigation a:active,
+.single .navigation a:focus,
+.page .navigation a:focus {
+  color: #500f0f;
+}
 .single [rel='prev'],
 .page [rel='prev'] {
   display: inline-block;
@@ -1071,6 +1096,11 @@ body.page .entry-title {
 }
 .comment-navigation a {
   color: #a52020;
+}
+.comment-navigation a:hover,
+.comment-navigation a:active,
+.comment-navigation a:focus {
+  color: #500f0f;
 }
 .comment-navigation .nav-previous {
   float: left;
@@ -1124,6 +1154,11 @@ li.comment .comment-meta .comment-metadata {
 li.comment .comment-meta .comment-metadata a {
   color: #a52020;
 }
+li.comment .comment-meta .comment-metadata a:hover,
+li.comment .comment-meta .comment-metadata a:active,
+li.comment .comment-meta .comment-metadata a:focus {
+  color: #500f0f;
+}
 li.comment .comment-meta .comment-author {
   font-weight: 700;
 }
@@ -1135,6 +1170,14 @@ li.comment .comment-meta .comment-author a {
 }
 li.comment .comment-content {
   clear: left;
+}
+.comment-respond a {
+  color: #a52020;
+}
+.comment-respond a:hover,
+.comment-respond a:active,
+.comment-respond a:focus {
+  color: #500f0f;
 }
 /* =Widgets
 ----------------------------------------------- */

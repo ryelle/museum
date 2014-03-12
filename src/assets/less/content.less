@@ -24,6 +24,13 @@
 	p {
 		margin-bottom: @spacing/2;
 	}
+
+	a {
+		color: @red;
+		&:hover, &:active, &:focus {
+			color: darken( @red, 20% );
+		}
+	}
 }
 
 .entry-meta {

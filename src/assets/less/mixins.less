@@ -55,6 +55,10 @@
 
 	a {
 		color: @red;
+
+		&:hover, &:active, &:focus {
+			color: darken( @red, 20% );
+		}
 	}
 }
 /* @end */
