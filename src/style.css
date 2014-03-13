@@ -777,6 +777,9 @@ body.search-results .site-main,
 .entry-header .no-title p {
   margin-top: 0;
 }
+.entry-image {
+  text-align: center;
+}
 .entry-content,
 .entry-summary {
   font-size: 17px;
@@ -923,10 +926,6 @@ body.blog .with-image,
 body.archive .with-image {
   position: relative;
   padding: 0;
-}
-body.blog .with-image .entry-image,
-body.archive .with-image .entry-image {
-  text-align: center;
 }
 body.blog .with-image .entry-header,
 body.archive .with-image .entry-header {
