@@ -1,0 +1,55 @@
+/* @group Search Form */
+.search-form {
+	margin-bottom: @spacing/2;
+
+	input[type="search"] {
+		width: 100%;
+		.box-sizing();
+	}
+
+	.search-submit {
+		display: none;
+	}
+}
+/* @end */
+
+/* @group Comment Form */
+.comment-form {
+	label {
+		font-family: @heading-font;
+		font-style: italic;
+		.font-size(14);
+	}
+
+	.comment-form-author,
+	.comment-form-email {
+		float: left;
+		width: 50%;
+		.box-sizing;
+
+		label, input {
+			display: block;
+			width: 100%;
+		}
+	}
+
+	.comment-form-author {
+		padding-right: @spacing/2;
+	}
+
+	.comment-form-email {
+		padding-left: @spacing/2;
+	}
+
+	.comment-form-comment {
+		textarea {
+			width: 100%;
+			resize: vertical;
+		}
+	}
+
+	.form-submit {
+		text-align: right;
+	}
+}
+/* @end */

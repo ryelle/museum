@@ -69,7 +69,7 @@ add_filter( 'wp_title', 'museum_wp_title', 10, 2 );
 
 /**
  * Add some custom classes to the post container.
- * 
+ *
  * @param array $classes Classes for the post container
  * @return array
  */
@@ -80,3 +80,22 @@ function museum_post_class( $classes, $class, $post_id ) {
 	return $classes;
 }
 add_filter( 'post_class', 'museum_post_class', 10, 3 );
+
+/**
+ * Unset the website field
+ */
+function museum_comment_fields( $fields ){
+	unset( $fields['url'] );
+	return $fields;
+}
+add_filter( 'comment_form_default_fields', 'museum_comment_fields' );
+
+/**
+ * Remove info about allowed HTML.
+ */
+function museum_comment_form( $args ){
+	$args['comment_notes_after'] = '';
+	$args['comment_field']       = '<p class="comment-form-comment clearfix"><label for="comment">' . __( 'What is your message?', 'museum' ) . '</label><textarea id="comment" name="comment" cols="45" rows="5" aria-required="true"></textarea></p>';
+	return $args;
+}
+add_filter( 'comment_form_defaults', 'museum_comment_form' );

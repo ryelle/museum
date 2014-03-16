@@ -11,6 +11,10 @@
 	.font-size(30);
 }
 
+#reply-title {
+	margin-bottom: @spacing/2;
+}
+
 ol.comment-list {
 	margin: 0;
 }
@@ -52,6 +56,19 @@ li.comment {
 	.comment-content {
 		clear: left;
 	}
+
+	.comment-awaiting-moderation {
+		clear: left;
+		font-style: italic;
+	}
+
+	.reply {
+		text-transform: uppercase;
+		font-weight: @bold;
+		.clearfix;
+		.big-red-font;
+		a { float: right; }
+	}
 }
 
 .comment-respond {
@@ -62,4 +79,20 @@ li.comment {
 			color: darken( @red, 20% );
 		}
 	}
+
+	.required {
+		color: @red;
+	}
+}
+
+.no-comments,
+.comment-notes {
+	margin-bottom: @spacing/2;
+	font-family: @heading-font;
+	font-style: italic;
+	.font-size(14);
+}
+
+.no-comments {
+	text-align: center;
 }
