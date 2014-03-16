@@ -71,6 +71,27 @@ li.comment {
 	}
 }
 
+li.pingback {
+	margin-bottom: @spacing/2;
+	padding-bottom: @spacing/2;
+	border-bottom: 1px solid @light-grey;
+	font-family: @heading-font;
+	font-style: italic;
+	.font-size(14);
+
+	a {
+		color: @red;
+
+		&:hover, &:active, &:focus {
+			color: darken( @red, 20% );
+		}
+	}
+
+	& + li.comment {
+		margin-top: @spacing;
+	}
+}
+
 .comment-respond {
 	a {
 		color: @red;

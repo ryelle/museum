@@ -1250,6 +1250,26 @@ li.comment .reply a:focus {
 li.comment .reply a {
   float: right;
 }
+li.pingback {
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #ededed;
+  font-family: 'Playfair Display';
+  font-style: italic;
+  font-size: 14px;
+  font-size: 0.875rem;
+}
+li.pingback a {
+  color: #a52020;
+}
+li.pingback a:hover,
+li.pingback a:active,
+li.pingback a:focus {
+  color: #500f0f;
+}
+li.pingback + li.comment {
+  margin-top: 40px;
+}
 .comment-respond a {
   color: #a52020;
 }
