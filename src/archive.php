@@ -24,7 +24,7 @@ get_header(); ?>
 							single_tag_title();
 
 						elseif ( is_author() ) :
-							printf( __( 'Author: %s', 'museum' ), '<span class="vcard">' . get_the_author() . '</span>' );
+							printf( '<span class="author-image">%s</span><span class="vcard">%s</span>', get_avatar( get_the_author_meta( 'ID' ), 128 ), get_the_author() );
 
 						elseif ( is_day() ) :
 							printf( __( 'Day: %s', 'museum' ), '<span>' . get_the_date() . '</span>' );
@@ -73,6 +73,11 @@ get_header(); ?>
 					$term_description = term_description();
 					if ( ! empty( $term_description ) ) :
 						printf( '<div class="taxonomy-description">%s</div>', $term_description );
+					endif;
+
+					$bio = get_the_author_meta( 'description', get_the_author_meta( 'ID' ) );
+					if ( ! empty( $bio ) ):
+						printf( '<div class="author-description">%s</div>', apply_filters( 'the_content', $bio ) );
 					endif;
 				?>
 			</header><!-- .page-header -->

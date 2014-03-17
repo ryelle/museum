@@ -979,6 +979,24 @@ body.archive #main {
 .page-header p {
   margin: 0 0 20px;
 }
+body.author .page-header .author-image {
+  display: inline-block;
+  overflow: hidden;
+  margin-right: 20px;
+  width: 64px;
+  height: 64px;
+  vertical-align: middle;
+  -webkit-border-radius: 32px;
+  -moz-border-radius: 32px;
+  border-radius: 32px;
+}
+body.author .page-header .author-image img {
+  width: 100%;
+  height: auto;
+}
+body.author .page-header .vcard {
+  vertical-align: middle;
+}
 /* @end */
 /* @group Search Results */
 body.search-results .hentry {

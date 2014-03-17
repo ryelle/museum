@@ -61,7 +61,7 @@ if ( post_password_required() ) {
 		<p class="no-comments"><?php _e( 'Comments are closed.', 'museum' ); ?></p>
 	<?php endif; ?>
 
-	<?php comment_form( array( 
+	<?php comment_form( array(
 		'title_reply'=> __( 'Comment on this post', 'museum' ),
 		'title_reply_to' => __( 'Reply to %', 'museum' ),
 	) ); ?>

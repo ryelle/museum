@@ -213,6 +213,30 @@ body.archive {
 		margin: 0 0 @spacing/2;
 	}
 }
+body.author {
+	.page-header {
+
+		.author-image {
+			display: inline-block;
+			overflow: hidden;
+			margin-right: @spacing/2;
+			width: 64px;
+			height: 64px;
+			vertical-align: middle;
+			.border-radius(32px);
+
+			img {
+				width: 100%;
+				height: auto;
+			}
+		}
+
+		.vcard {
+			vertical-align: middle;
+		}
+
+	}
+}
 /* @end */
 
 /* @group Search Results */
