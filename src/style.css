@@ -923,6 +923,18 @@ body.blog:not(.paged) .hentry:first-of-type .read-more,
 body.archive:not(.paged) .hentry:first-of-type .read-more {
   display: block;
 }
+body.blog:not(.paged) .hentry:first-of-type.no-image,
+body.archive:not(.paged) .hentry:first-of-type.no-image {
+  padding: 20px;
+}
+body.blog:not(.paged) .hentry:first-of-type.no-image .entry-header,
+body.archive:not(.paged) .hentry:first-of-type.no-image .entry-header {
+  position: relative;
+  top: auto;
+  left: auto;
+  bottom: auto;
+  right: auto;
+}
 body.blog:not(.paged) .hentry:nth-of-type(even),
 body.archive:not(.paged) .hentry:nth-of-type(even) {
   float: left;

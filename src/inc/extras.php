@@ -76,6 +76,8 @@ add_filter( 'wp_title', 'museum_wp_title', 10, 2 );
 function museum_post_class( $classes, $class, $post_id ) {
 	if ( !is_singular() && has_post_thumbnail( $post_id ) )
 		$classes[] = 'with-image';
+	elseif ( !is_singular() && !has_post_thumbnail( $post_id ) )
+		$classes[] = 'no-image';
 
 	return $classes;
 }
