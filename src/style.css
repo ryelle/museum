@@ -339,7 +339,7 @@ button,
 input[type="button"],
 input[type="reset"],
 input[type="submit"] {
-  padding: .55em 1em .45em;
+  padding: .65em 1em .45em;
   background: #666666;
   color: #ffffff;
   font-size: 16px;
@@ -1035,6 +1035,16 @@ body.page .entry-title {
 }
 .search-form .search-submit {
   display: none;
+}
+/* @end */
+/* @group Password Protected Form */
+.post-password-form label {
+  display: block;
+  font-family: 'Playfair Display';
+  font-style: italic;
+}
+.post-password-form input[type="password"] {
+  width: 60%;
 }
 /* @end */
 /* @group Comment Form */

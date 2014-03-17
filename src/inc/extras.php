@@ -99,3 +99,9 @@ function museum_comment_form( $args ){
 	return $args;
 }
 add_filter( 'comment_form_defaults', 'museum_comment_form' );
+
+function museum_password_form( $output ) {
+	$output = str_replace( array( '</label>', ' <input name="post_password' ), array( '', '</label><input name="post_password' ), $output );
+	return $output;
+}
+add_filter( 'the_password_form', 'museum_password_form' );
