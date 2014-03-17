@@ -1011,17 +1011,90 @@ body.page .entry-title {
   font-size: 14px;
   font-size: 0.875rem;
 }
-.site-main .gallery {
+/* @group Galleries */
+.gallery {
   margin-bottom: 40px;
 }
-.site-main .gallery a img {
+.gallery:before,
+.gallery:after {
+  content: "\0020";
+  display: block;
+  height: 0;
+  overflow: hidden;
+}
+.gallery:after {
+  clear: both;
+}
+.gallery .gallery-item {
+  float: left;
+  text-align: center;
+}
+.gallery .gallery-item .gallery-icon a {
+  display: block;
+}
+.gallery .gallery-item .gallery-icon img {
   border: none;
   height: auto;
-  max-width: 90%;
+  margin-bottom: 0;
 }
-.site-main .gallery dd {
+.gallery .gallery-item .gallery-caption {
+  display: none;
   margin: 0;
+  text-align: center;
 }
+.gallery .gallery-columns-1 .gallery-size-medium {
+  display: table;
+  margin: 0 auto 20px;
+}
+.gallery .gallery-columns-1 .gallery-size-thumbnail,
+.gallery .gallery-columns-2 .gallery-size-thumbnail,
+.gallery .gallery-columns-3 .gallery-size-thumbnail,
+.gallery .gallery-columns-4 .gallery-size-thumbnail {
+  display: table;
+  margin: 0 auto 20px;
+}
+.gallery .gallery-columns-1 .gallery-item,
+.gallery .gallery-columns-2 .gallery-item,
+.gallery .gallery-columns-3 .gallery-item,
+.gallery .gallery-columns-4 .gallery-item {
+  text-align: center;
+}
+.gallery-columns-5 .gallery-item {
+  width: 18.4%;
+}
+.gallery-columns-5 .gallery-item:nth-of-type(5n - 5) {
+  margin-right: 0;
+  clear: right;
+}
+.gallery-columns-6 .gallery-item {
+  width: 15%;
+}
+.gallery-columns-6 .gallery-item:nth-of-type(6n - 6) {
+  margin-right: 0;
+  clear: right;
+}
+.gallery-columns-7 .gallery-item {
+  width: 12.571428571428571%;
+}
+.gallery-columns-7 .gallery-item:nth-of-type(7n - 7) {
+  margin-right: 0;
+  clear: right;
+}
+.gallery-columns-8 .gallery-item {
+  width: 10.75%;
+}
+.gallery-columns-8 .gallery-item:nth-of-type(8n - 8) {
+  margin-right: 0;
+  clear: right;
+}
+.gallery-columns-9 .gallery-item {
+  width: 9.333333333333334%;
+}
+.gallery-columns-9 .gallery-item:nth-of-type(9n - 9) {
+  margin-right: 0;
+  clear: right;
+}
+/* @end */
 /* @end */
 /* @group Search Form */
 .search-form {

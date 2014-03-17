@@ -52,6 +52,9 @@ function museum_setup() {
 
 	// Enable support for Post Formats.
 	add_theme_support( 'post-formats', array( 'aside', 'image', 'video', 'quote', 'link' ) );
+
+	// Remove default gallery styles
+	add_filter( 'use_default_gallery_style', '__return_false' );
 }
 endif; // museum_setup
 add_action( 'after_setup_theme', 'museum_setup' );
