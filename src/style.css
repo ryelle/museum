@@ -986,9 +986,6 @@ body.author .page-header .author-image {
   width: 64px;
   height: 64px;
   vertical-align: middle;
-  -webkit-border-radius: 32px;
-  -moz-border-radius: 32px;
-  border-radius: 32px;
 }
 body.author .page-header .author-image img {
   width: 100%;
