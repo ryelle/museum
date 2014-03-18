@@ -593,7 +593,8 @@ h4 {
   font-weight: 700;
 }
 .site-title,
-.entry-title {
+.entry-title,
+.page-title {
   font-size: 36px;
   font-size: 2.25rem;
 }
@@ -649,6 +650,8 @@ body {
 body.single .hentry,
 body.page .hentry,
 body.search-results .site-main,
+body.search-no-results .site-main,
+body.error404 .site-main,
 .comments-area {
   margin: 40px 130px 0;
 }
