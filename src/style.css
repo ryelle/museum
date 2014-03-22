@@ -748,6 +748,7 @@ body.error404 .site-main,
 /* =Content
 ----------------------------------------------- */
 #masthead {
+  clear: both;
   text-align: center;
 }
 .site-title {
