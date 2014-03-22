@@ -1145,6 +1145,17 @@ body.page .entry-title {
 }
 /* @end */
 /* @end */
+/* Video
+----------------------------------------------- */
+.wp-video,
+.wp-audio-shortcode {
+  margin: 20px 0;
+}
+.mejs-container,
+.mejs-embed,
+.mejs-embed body {
+  background-color: #222222;
+}
 /* @group Search Form */
 .search-form {
   margin-bottom: 20px;
