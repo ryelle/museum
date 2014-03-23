@@ -17,6 +17,11 @@
 
 	<div class="entry-content">
 		<?php the_content(); ?>
+
+		<?php if ( 'attachment' == get_post_type() ) : ?>
+			<?php the_excerpt(); ?>
+		<?php endif; ?>
+
 		<?php
 			wp_link_pages( array(
 				'before' => '<div class="page-links">' . __( 'Pages:', 'museum' ),
