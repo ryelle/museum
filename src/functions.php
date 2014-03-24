@@ -51,7 +51,7 @@ function museum_setup() {
 	) );
 
 	// Enable support for Post Formats.
-	add_theme_support( 'post-formats', array( 'aside', 'image', 'video', 'quote', 'link' ) );
+	add_theme_support( 'post-formats', array( 'aside', 'image', 'video', 'audio', 'quote', 'link' ) );
 
 	// Remove default gallery styles
 	add_filter( 'use_default_gallery_style', '__return_false' );
