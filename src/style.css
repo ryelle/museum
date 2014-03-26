@@ -1149,7 +1149,7 @@ body.page .entry-title {
 ----------------------------------------------- */
 .wp-video,
 .wp-audio-shortcode {
-  margin: 20px 0;
+  margin: 20px auto;
 }
 .mejs-container,
 .mejs-embed,
