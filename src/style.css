@@ -751,12 +751,18 @@ body.error404 .site-main,
   clear: both;
   text-align: center;
 }
-.site-title {
+.site-branding {
   margin: 60px 0;
   font-size: 36px;
   font-size: 2.25rem;
   letter-spacing: 1px;
   text-transform: uppercase;
+}
+.site-branding.text-left .site-logo,
+.site-branding.text-right .site-logo,
+.site-branding.text-left .site-title,
+.site-branding.text-right .site-title {
+  display: inline-block;
 }
 .site-footer {
   text-align: center;

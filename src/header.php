@@ -29,8 +29,17 @@
 	</nav><!-- #site-navigation -->
 
 	<header id="masthead" class="site-header" role="banner">
-		<div class="site-branding">
+		<?php $header_position = get_theme_mod( 'header_position', 'right' ); ?>
+		<div class="site-branding text-<?php echo $header_position; ?>">
+
+			<?php if ( get_header_image() ) : ?>
+			<div class="site-logo">
+				<img src="<?php header_image(); ?>" width="<?php echo get_custom_header()->width; ?>" height="<?php echo get_custom_header()->height; ?>">
+			</div>
+			<?php endif; // End header image check. ?>
+
 			<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+
 		</div>
 	</header><!-- #masthead -->
 
