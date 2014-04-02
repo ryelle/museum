@@ -47,8 +47,8 @@ function museum_custom_header_options() {
 	<th scope="row"><?php _e( 'Text Position', 'musuem' ); ?></th>
 	<td>
 		<select name="header_position">
-			<option value="right" <?php selected( $header_position, 'right' ); ?>>Right of image</option>
-			<option value="below" <?php selected( $header_position, 'below' ); ?>>Below image</option>
+			<option value="right" <?php selected( $header_position, 'right' ); ?>><?php _e( 'Right of image', 'musuem' ); ?></option>
+			<option value="below" <?php selected( $header_position, 'below' ); ?>><?php _e( 'Below image', 'musuem' ); ?></option>
 		</select>
 	</td>
 </tr>
@@ -101,6 +101,9 @@ endif; // museum_header_style
 if ( ! function_exists( 'museum_admin_header_style' ) ) :
 /**
  * Styles the header image displayed on the Appearance > Header admin panel.
+ *
+ * Also saves the header position. 
+ * @todo do via JS/ajax to remove unrelated functionality here, and auto-update preview
  *
  * @see museum_custom_header_setup().
  */
