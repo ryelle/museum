@@ -34,7 +34,9 @@
 
 			<?php if ( get_header_image() ) : ?>
 			<div class="site-logo">
+				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
 				<img src="<?php header_image(); ?>" width="<?php echo get_custom_header()->width; ?>" height="<?php echo get_custom_header()->height; ?>">
+				</a>
 			</div>
 			<?php endif; // End header image check. ?>
 
