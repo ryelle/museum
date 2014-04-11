@@ -1,0 +1,42 @@
+
+@media screen and (max-width: 1000px) {
+
+	body.blog,
+	body.archive {
+
+		.entry-title:after {
+			content: ' \203A';
+		}
+
+		.entry-excerpt {
+			display: none;
+		}
+
+	}
+
+}
+
+@media screen and (max-width: 700px) {
+	body.blog,
+	body.archive {
+		.hentry {
+			width: 100%;
+
+			&.no-image {
+				&:before{
+					padding-top: 0;
+				}
+
+				padding: @spacing/2;
+
+				.entry-header {
+					position: relative;
+					top: auto;
+					left: auto;
+					bottom: auto;
+					right: auto;
+				}
+			}
+		}
+	}
+}

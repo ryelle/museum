@@ -880,12 +880,31 @@ body.archive .hentry {
   position: relative;
   margin: 0 0 40px;
   width: 48%;
-  height: 442px;
+  width: calc(50% - 20px);
   overflow: hidden;
   background: #222222;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
+}
+body.blog .hentry:before,
+body.archive .hentry:before {
+  content: "";
+  display: block;
+  padding-top: 100%;
+  /* initial ratio of 1:1*/
+}
+body.blog .hentry .entry-image,
+body.archive .hentry .entry-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+body.blog .hentry .entry-image img,
+body.archive .hentry .entry-image img {
+  height: 100%;
 }
 body.blog .hentry:nth-of-type(even),
 body.archive .hentry:nth-of-type(even) {
@@ -900,6 +919,7 @@ body.archive .hentry:nth-of-type(odd) {
 body.blog .hentry .entry-header,
 body.archive .hentry .entry-header {
   position: absolute;
+  overflow: hidden;
   bottom: 20px;
   left: 20px;
   right: 20px;
@@ -936,6 +956,10 @@ body.archive:not(.paged) .hentry:first-of-type .read-more {
 body.blog:not(.paged) .hentry:first-of-type.no-image,
 body.archive:not(.paged) .hentry:first-of-type.no-image {
   padding: 20px;
+}
+body.blog:not(.paged) .hentry:first-of-type.no-image:before,
+body.archive:not(.paged) .hentry:first-of-type.no-image:before {
+  padding-top: 0;
 }
 body.blog:not(.paged) .hentry:first-of-type.no-image .entry-header,
 body.archive:not(.paged) .hentry:first-of-type.no-image .entry-header {
@@ -1491,4 +1515,38 @@ li.pingback + li.comment {
 /* When Infinite Scroll has reached its end we need to re-display elements that were hidden (via .neverending) before */
 .infinity-end.neverending .site-footer {
   display: block;
+}
+/* =Responsive
+----------------------------------------------- */
+@media screen and (max-width: 1000px) {
+  body.blog .entry-title:after,
+  body.archive .entry-title:after {
+    content: ' \203A';
+  }
+  body.blog .entry-excerpt,
+  body.archive .entry-excerpt {
+    display: none;
+  }
+}
+@media screen and (max-width: 700px) {
+  body.blog .hentry,
+  body.archive .hentry {
+    width: 100%;
+  }
+  body.blog .hentry.no-image,
+  body.archive .hentry.no-image {
+    padding: 20px;
+  }
+  body.blog .hentry.no-image:before,
+  body.archive .hentry.no-image:before {
+    padding-top: 0;
+  }
+  body.blog .hentry.no-image .entry-header,
+  body.archive .hentry.no-image .entry-header {
+    position: relative;
+    top: auto;
+    left: auto;
+    bottom: auto;
+    right: auto;
+  }
 }
