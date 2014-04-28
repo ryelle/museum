@@ -733,8 +733,11 @@ body.error404 .site-main,
 }
 /* Small menu */
 .menu-toggle {
-  cursor: pointer;
   display: none;
+  padding: 20px;
+  text-align: center;
+  color: #ffffff;
+  cursor: pointer;
 }
 @media screen and (max-width: 600px) {
   .menu-toggle,
@@ -1529,10 +1532,6 @@ li.pingback + li.comment {
   }
 }
 @media screen and (max-width: 700px) {
-  body.blog .hentry,
-  body.archive .hentry {
-    width: 100%;
-  }
   body.blog .hentry.no-image,
   body.archive .hentry.no-image {
     padding: 20px;
@@ -1548,5 +1547,15 @@ li.pingback + li.comment {
     left: auto;
     bottom: auto;
     right: auto;
+  }
+}
+@media screen and (max-width: 500px) {
+  .entry-excerpt,
+  .read-more {
+    display: none !important;
+  }
+  .two-column .sidebar {
+    float: none;
+    width: 100%;
   }
 }

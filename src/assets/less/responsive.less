@@ -20,7 +20,7 @@
 	body.blog,
 	body.archive {
 		.hentry {
-			width: 100%;
+			// width: 100%;
 
 			&.no-image {
 				&:before{
@@ -38,5 +38,17 @@
 				}
 			}
 		}
+	}
+}
+
+@media screen and (max-width: 500px) {
+	.entry-excerpt,
+	.read-more {
+		display: none !important;
+	}
+
+	.two-column .sidebar {
+		float: none;
+		width: 100%;
 	}
 }
