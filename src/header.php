@@ -24,8 +24,10 @@
 	<nav id="site-navigation" class="main-navigation" role="navigation">
 		<h1 class="menu-toggle"><?php _e( 'Menu', 'museum' ); ?></h1>
 		<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'museum' ); ?></a>
-
-		<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
+		<div class="nav-wrapper">
+			<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_class' => 'main-menu' ) ); ?>
+			<?php wp_nav_menu( array( 'theme_location' => 'social', 'menu_class' => 'social-menu' ) ); ?>
+		</div>
 	</nav><!-- #site-navigation -->
 
 	<header id="masthead" class="site-header" role="banner">
