@@ -647,6 +647,13 @@ body {
 .secondary-content {
   margin-bottom: 0;
 }
+.main-navigation > div {
+  margin: 0 auto;
+  max-width: 1000px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
 body.single .hentry,
 body.page .hentry,
 body.search-results .site-main,
