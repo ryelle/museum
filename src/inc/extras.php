@@ -8,16 +8,16 @@
  */
 
 /**
- * Get our wp_nav_menu() fallback, wp_page_menu(), to show a home link.
+ * Disable the wp_nav_menu() fallback menu.
  *
  * @param array $args Configuration arguments.
  * @return array
  */
-function museum_page_menu_args( $args ) {
-	$args['show_home'] = true;
+function museum_nav_menu_args( $args ) {
+	$args['fallback_cb'] = false;
 	return $args;
 }
-add_filter( 'wp_page_menu_args', 'museum_page_menu_args' );
+add_filter( 'wp_nav_menu_args', 'museum_nav_menu_args' );
 
 /**
  * Adds custom classes to the array of body classes.
