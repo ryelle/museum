@@ -2108,4 +2108,12 @@ li.pingback + li.comment {
   body.archive .hentry .entry-header {
     padding: 10px;
   }
+  .alignright,
+  .alignleft {
+    display: block;
+    float: none;
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+  }
 }
