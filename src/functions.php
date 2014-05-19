@@ -57,6 +57,8 @@ function museum_setup() {
 	// Use HTML5 elements for these features
 	add_theme_support( 'html5', array( 'comment-list', 'comment-form', 'search-form', 'gallery', 'caption' ) );
 
+	add_editor_style();
+
 	// Remove default gallery styles
 	add_filter( 'use_default_gallery_style', '__return_false' );
 }
