@@ -40,7 +40,7 @@
 			if ( ! museum_categorized_blog() ) {
 				// This blog only has 1 category so we just need to worry about tags in the meta text
 				if ( '' != $tag_list ) {
-					$meta_text = __( '<div class="genericon genericon-tag"></div> %2$s.', 'museum' );
+					$meta_text = __( '<span class="entry-tags"><div class="genericon genericon-tag"></div> %2$s.</span>', 'museum' );
 				} else {
 					$meta_text = '';
 				}
@@ -48,9 +48,9 @@
 			} else {
 				// But this blog has loads of categories so we should probably display them here
 				if ( '' != $tag_list ) {
-					$meta_text = __( '<div class="genericon genericon-category"></div> %1$s <div class="genericon genericon-tag"></div> %2$s.', 'museum' );
+					$meta_text = __( '<span class="entry-categories"><div class="genericon genericon-category"></div> %1$s</span> <span class="entry-tags"><div class="genericon genericon-tag"></div> %2$s.</span>', 'museum' );
 				} else {
-					$meta_text = __( '<div class="genericon genericon-category"></div> %1$s.', 'museum' );
+					$meta_text = __( '<span class="entry-categories"><div class="genericon genericon-category"></div> %1$s.</span>', 'museum' );
 				}
 
 			} // end check for categories on this blog
