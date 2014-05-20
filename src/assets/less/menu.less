@@ -81,11 +81,23 @@
 /* Social menu */
 .social-menu {
 	a {
+		padding: 0;
 		visibility: hidden;
 		.genericon;
+		width: 36px;
+		height: 36px;
+		margin: 10px;
 
 		&:before {
+			padding: 10px;
+			display: block;
 			visibility: visible;
+			background: black;
+			border-radius: 36px/2;
+		}
+
+		&:hover:before {
+			background-color: lighten( @black, 10% );
 		}
 	}
 
