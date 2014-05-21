@@ -131,12 +131,11 @@
 
 @media screen and (max-width: 600px) {
 	.menu-toggle,
-	.main-navigation.toggled .nav-menu,
-	.main-navigation.toggled .social-menu {
+	.main-navigation.toggled .nav-wrapper ul {
 		display: block;
 	}
 
-	.main-navigation .nav-menu {
+	.main-navigation .nav-wrapper {
 		ul {
 			display: none;
 		}
@@ -152,7 +151,8 @@
 			}
 		}
 
-		&.main-menu {
+		.main-menu,
+		.social-menu {
 			float: none;
 		}
 	}
