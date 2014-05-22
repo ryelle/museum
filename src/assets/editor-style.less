@@ -22,6 +22,14 @@ body {
 	.font-size(17);
 }
 
+a {
+	color: @red;
+
+	&:hover, &:active, &:focus {
+		color: darken( @red, 20% );
+	}
+}
+
 .wp-caption {
 	border: 1px solid #eee !important;
 	margin-bottom: @spacing !important;
