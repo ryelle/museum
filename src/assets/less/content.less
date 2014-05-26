@@ -98,7 +98,6 @@ body.archive {
 		margin: 0 0 @spacing;
 		width: 48%;
 		width: ~"calc(50% - 20px)";
-		overflow: hidden;
 		background: @black;
 
 		.box-sizing();
@@ -107,6 +106,24 @@ body.archive {
 			content: "";
 			display: block;
 			padding-top: 100%; 	/* initial ratio of 1:1*/
+		}
+
+		.post-link {
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			overflow: hidden;
+
+			&:focus {
+				outline: none;
+				box-shadow: 0 0 5px fadeout( black, 50% );
+
+				.entry-header {
+					opacity: 1;
+				}
+			}
 		}
 
 		.entry-image {
@@ -213,10 +230,6 @@ body.archive {
 		.entry-excerpt {
 			display: none;
 		}
-	}
-
-	#main {
-		overflow: hidden;
 	}
 }
 /* @end */

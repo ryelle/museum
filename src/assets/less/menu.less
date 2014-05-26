@@ -24,11 +24,13 @@
 		position: relative;
 		display: inline-block;
 
-		&:hover > ul {
-			display: block;
+		&:hover > ul,
+		a:focus + ul {
+			.show-dropdown;
 		}
 
-		&:hover a {
+		&:hover a,
+		a:focus {
 			background: lighten( @black, 5% );
 		}
 
@@ -47,7 +49,7 @@
 
 	ul ul {
 		box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
-		display: none;
+		.hidden-dropdown;
 		float: left;
 		left: 0;
 		position: absolute;
@@ -96,7 +98,8 @@
 			border-radius: 36px/2;
 		}
 
-		&:hover:before {
+		&:hover:before,
+		&:focus:before {
 			color: @black;
 			background-color: white;
 		}
