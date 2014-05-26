@@ -3,7 +3,7 @@
  *
  * Handles toggling the navigation menu for small screens.
  */
-( function() {
+( function( $ ) {
 	var container, button, menu;
 
 	container = document.getElementById( 'site-navigation' );
@@ -31,4 +31,23 @@
 		else
 			container.className += ' toggled';
 	};
-} )();
+
+	$( menu ).find( '.menu-item-has-children' ).each(function(i, el){
+		var link = $( el.getElementsByTagName('a')[0] );
+		if ( typeof link === undefined ){
+			return;
+		}
+		$( el ).on({
+			focus: function(){
+				console.log("test-focus");
+				$( el ).find('ul').addClass( 'hover' );
+			},
+			blur: function(){
+				console.log("test-blur");
+				$( el ).find('ul').removeClass( 'hover' )
+			}
+		})
+	});
+
+
+} )( jQuery );
