@@ -1,7 +1,7 @@
 Museum
 ===
 
-Museum is a free theme crafted to showcase all of your best photographs, drawings, or illustrations. Featuring elegant, museum-inspired typography and ample room for your images, Museum pays special attention to category and media attachment pages to help your collections shine.
+Museum is a free WordPress theme crafted to showcase all of your best photographs, drawings, or illustrations. Featuring elegant, museum-inspired typography and ample room for your images, Museum pays special attention to category and media attachment pages to help your collections shine.
 
 ###Curate with categories
 
