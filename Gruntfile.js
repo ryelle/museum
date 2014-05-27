@@ -17,7 +17,7 @@ module.exports = function(grunt) {
 				cwd: BUILD_DIR,
 				src: [
 					'node_modules',
-					'less',
+					'assets/less',
 					'README.md',
 					'js/src'
 				]
@@ -36,7 +36,9 @@ module.exports = function(grunt) {
 						'!.DS_Store',
 						'!package.json',
 						'!Gruntfile.js',
-						'!node_modules'
+						'!node_modules',
+						'!assets/less',
+						'!assets/*.less'
 					],
 					dest: BUILD_DIR
 				}]
