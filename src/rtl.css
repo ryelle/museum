@@ -1,17 +1,296 @@
-/*
-Theme Name: Museum
+/*!
+ * Museum RTL CSS
+ */
 
-Adding support for language written in a Right To Left (RTL) direction is easy -
-it's just a matter of overwriting all the horizontal positioning attributes
-of your CSS stylesheet in a separate stylesheet file named rtl.css.
+/* =Reset
+-------------------------------------------------------------- */
 
-http://codex.wordpress.org/Right_to_Left_Language_Support
-
-*/
-
-/*
-body {
-	direction: rtl;
-	unicode-bidi: embed;
+caption,
+th,
+td {
+	text-align: right;
 }
-*/
+
+/* =Global
+----------------------------------------------- */
+
+ul,
+ol {
+	margin: 0 40px 20px 0;
+}
+
+li > ul,
+li > ol {
+	margin-right: 40px;
+	margin-left: auto;
+}
+
+/* Alignment */
+.alignright {
+	float: right;
+	margin-left: 1.5em;
+	margin-right: auto;
+}
+
+.alignleft {
+	float: left;
+	margin-right: 1.5em;
+	margin-left: auto;
+}
+
+.screen-reader-text:hover,
+.screen-reader-text:active,
+.screen-reader-text:focus {
+	right: 5px;
+	left: auto;
+}
+
+.two-column .sidebar {
+	float: right;
+}
+
+/* =Menu
+----------------------------------------------- */
+
+.main-navigation ul {
+	padding-right: 0;
+	padding-left: 0;
+}
+
+.main-navigation .main-menu {
+	float: right;
+}
+
+.main-navigation .social-menu {
+	float: left;
+}
+
+.main-navigation ul ul {
+	float: right;
+	right: 0;
+	left: auto;
+}
+
+.main-navigation ul ul ul {
+	right: 100%;
+	left: auto;
+}
+
+/* =Content
+----------------------------------------------- */
+
+.entry-meta .entry-taxes {
+	float: left;
+	text-align: left;
+}
+
+.entry-meta .entry-taxes .genericon-tag {
+	margin-right: 20px;
+	margin-left: auto;
+}
+
+.read-more {
+	float: left;
+}
+
+body.blog .hentry .post-link,
+body.archive .hentry .post-link {
+	right: 0;
+	left: 0;
+}
+
+body.blog .hentry .entry-image,
+body.archive .hentry .entry-image {
+	right: 0;
+	left: 0;
+}
+
+body.blog .hentry:nth-of-type(even),
+body.archive .hentry:nth-of-type(even) {
+	float: left;
+}
+
+body.blog .hentry:nth-of-type(odd),
+body.archive .hentry:nth-of-type(odd) {
+	float: right;
+}
+
+body.blog .hentry .entry-header,
+body.archive .hentry .entry-header {
+	right: 20px;
+	left: 20px;
+}
+
+body.blog.home:not(.paged) .hentry:first-of-type.no-image .entry-header,
+body.archive.home:not(.paged) .hentry:first-of-type.no-image .entry-header {
+	right: auto;
+	left: auto;
+}
+
+body.blog.home:not(.paged) .hentry:nth-of-type(even),
+body.archive.home:not(.paged) .hentry:nth-of-type(even) {
+	float: right;
+}
+
+body.blog.home:not(.paged) .hentry:nth-of-type(odd),
+body.archive.home:not(.paged) .hentry:nth-of-type(odd) {
+	float: left;
+}
+
+body.author .page-header .author-image {
+	margin-left: 20px;
+	margin-right: auto;
+}
+
+/* Galleries
+----------------------------------------------- */
+
+.gallery .gallery-item {
+	float: right;
+}
+
+.gallery-columns-4 .gallery-item {
+	margin-left: 2%;
+	margin-right: auto;
+}
+
+.gallery-columns-4 .gallery-item:nth-of-type(4n - 4) {
+	margin-left: 0;
+	clear: left;
+	margin-right: auto;
+}
+
+.gallery-columns-5 .gallery-item {
+	margin-left: 2%;
+	margin-right: auto;
+}
+
+.gallery-columns-5 .gallery-item:nth-of-type(5n - 5) {
+	margin-left: 0;
+	clear: left;
+	margin-right: auto;
+}
+
+.gallery-columns-6 .gallery-item {
+	margin-left: 2%;
+	margin-right: auto;
+}
+
+.gallery-columns-6 .gallery-item:nth-of-type(6n - 6) {
+	margin-left: 0;
+	clear: left;
+	margin-right: auto;
+}
+
+.gallery-columns-7 .gallery-item {
+	margin-left: 2%;
+	margin-right: auto;
+}
+
+.gallery-columns-7 .gallery-item:nth-of-type(7n - 7) {
+	margin-left: 0;
+	clear: left;
+	margin-right: auto;
+}
+
+.gallery-columns-8 .gallery-item {
+	margin-left: 2%;
+	margin-right: auto;
+}
+
+.gallery-columns-8 .gallery-item:nth-of-type(8n - 8) {
+	margin-left: 0;
+	clear: left;
+	margin-right: auto;
+}
+
+.gallery-columns-9 .gallery-item {
+	margin-left: 2%;
+	margin-right: auto;
+}
+
+.gallery-columns-9 .gallery-item:nth-of-type(9n - 9) {
+	margin-left: 0;
+	clear: left;
+	margin-right: auto;
+}
+
+/* Video
+----------------------------------------------- */
+
+.comment-form .comment-form-author,
+.comment-form .comment-form-email {
+	float: right;
+}
+
+.comment-form .comment-form-author {
+	padding-left: 20px;
+	padding-right: 0;
+}
+
+.comment-form .comment-form-email {
+	padding-right: 20px;
+	padding-left: 0;
+}
+
+.comment-form .form-submit {
+	text-align: left;
+}
+
+/* =Navigation
+----------------------------------------------- */
+
+.navigation.both-links .nav-previous {
+	float: right;
+}
+
+.navigation.both-links .nav-next {
+	float: left;
+}
+
+.single [rel='prev'],
+.page [rel='prev'] {
+	float: right;
+}
+
+.single [rel='next'],
+.page [rel='next'] {
+	float: left;
+	text-align: left;
+}
+
+.comment-navigation .nav-previous {
+	float: right;
+}
+
+.comment-navigation .nav-next {
+	float: left;
+	text-align: left;
+}
+
+/* =Comments
+----------------------------------------------- */
+
+.comment ul.children {
+	margin-right: 40px;
+	margin-left: auto;
+}
+
+li.comment .comment-meta .avatar {
+	float: right;
+	margin: 0 0 20px 20px;
+}
+
+li.comment .comment-content {
+	clear: right;
+}
+
+li.comment .comment-awaiting-moderation {
+	clear: right;
+}
+
+li.comment .reply a {
+	float: left;
+}
+
+/* Generated by the RTLer - http://wordpress.org/extend/plugins/rtler/ */
