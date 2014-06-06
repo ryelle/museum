@@ -133,14 +133,16 @@ button,
 input[type="button"],
 input[type="reset"],
 input[type="submit"] {
-	padding: .65em 1em .45em;
-	background: @grey;
+	padding: 1em 2.4em 0.8em;
+	background: @red;
 	color: @white;
-	.font-size( 16 );
+	font-weight: @bold;
+	.font-size( 14 );
 	line-height: 1;
 
-	border: 1px solid @dark-grey;
+	border: 1px solid darken( @red, 5% );
 	text-shadow: none;
+	text-transform: uppercase;
 	box-shadow: none;
 	cursor: pointer; /* Improves usability and consistency of cursor style between image-type 'input' and others */
 	-webkit-appearance: button; /* Corrects inability to style clickable 'input' types in iOS */
