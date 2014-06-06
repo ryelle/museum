@@ -5,6 +5,14 @@
 	a {
 		color: @white;
 	}
+
+	ul {
+		margin: 0 0 @spacing/2 @spacing/2;
+	}
+
+	* + ul {
+		margin-top: @spacing/2;
+	}
 }
 
 /* Make sure select elements fit in widgets */
