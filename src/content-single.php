@@ -26,7 +26,7 @@
 		?>
 	</div><!-- .entry-content -->
 
-	<footer class="entry-meta">
+	<footer class="entry-meta clear">
 		<div class="entry-author"><?php museum_posted_on(); ?></div>
 
 		<?php if ( 'post' == get_post_type() ) : ?>
