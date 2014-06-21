@@ -30,18 +30,21 @@ ul.children li {
 
 li.comment {
 	margin-bottom: @spacing;
+	background-color: darken( white, 2% );
+	padding: @spacing/2 @spacing/2 0;
 
 	.comment-meta {
+		margin-bottom: @spacing/2;
+
 		.avatar {
 			float: left;
 			margin: 0 @spacing/2 @spacing/2 0;
 		}
 
 		.comment-metadata {
-			padding-top: @spacing/4;
-			margin-bottom: .25em;
 			.big-red-font;
-			.font-size(16);
+			.font-size(12);
+			a { color: @text; }
 		}
 
 		.comment-author {
@@ -54,7 +57,7 @@ li.comment {
 	}
 
 	.comment-content {
-		clear: left;
+		margin-left: 85px;
 	}
 
 	.comment-awaiting-moderation {
@@ -63,11 +66,24 @@ li.comment {
 	}
 
 	.reply {
-		text-transform: uppercase;
+		margin: @spacing/2 @spacing/-2 0;
+		background-color: darken( white, 5% );
 		font-weight: @bold;
 		.clearfix;
 		.big-red-font;
-		a { float: right; }
+		text-align: center;
+		a { display: block; padding: 5px; }
+	}
+
+	.comment-respond {
+		margin: 0 @spacing/-2;
+		padding: 0 @spacing/2 @spacing/2;
+		overflow: hidden;
+		background-color: darken( white, 5% );
+	}
+
+	li {
+		padding-right: 0;
 	}
 }
 

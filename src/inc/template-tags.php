@@ -93,6 +93,10 @@ function museum_comment( $comment, $args, $depth ) {
 			<footer class="comment-meta">
 				<?php if ( 0 != $args['avatar_size'] ) { echo get_avatar( $comment, $args['avatar_size'] ); } ?>
 
+				<div class="comment-author vcard">
+					<?php printf( __( 'Comment by %s', 'museum' ), sprintf( '<cite class="fn">%s</cite>', get_comment_author_link() ) ); ?>
+				</div><!-- .comment-author -->
+
 				<div class="comment-metadata">
 					<a href="<?php echo esc_url( get_comment_link( $comment->comment_ID ) ); ?>">
 						<time datetime="<?php comment_time( 'c' ); ?>">
@@ -100,10 +104,6 @@ function museum_comment( $comment, $args, $depth ) {
 						</time>
 					</a>
 				</div><!-- .comment-metadata -->
-
-				<div class="comment-author vcard">
-					<?php printf( __( '%s says:', 'museum' ), sprintf( '<cite class="fn">%s</cite>', get_comment_author_link() ) ); ?>
-				</div><!-- .comment-author -->
 
 				<?php if ( '0' == $comment->comment_approved ) : ?>
 				<p class="comment-awaiting-moderation"><?php _e( 'Your comment is awaiting moderation.', 'museum' ); ?></p>
