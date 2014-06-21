@@ -30,7 +30,7 @@ ul.children li {
 
 li.comment {
 	article {
-		margin-bottom: @spacing;
+		margin-bottom: @spacing/2;
 		background-color: darken( white, 2% );
 		padding: @spacing/2 @spacing/2 0;
 
@@ -83,6 +83,10 @@ li.comment {
 		padding: 0 @spacing/2 @spacing/2;
 		overflow: hidden;
 		background-color: darken( white, 5% );
+
+		#reply-title {
+			margin-top: @spacing;
+		}
 	}
 
 	li {
@@ -92,8 +96,8 @@ li.comment {
 
 li.pingback {
 	margin-bottom: @spacing/2;
-	padding-bottom: @spacing/2;
-	border-bottom: 1px solid @light-grey;
+	padding: @spacing/2;
+	background-color: darken( white, 2% );
 	font-family: @heading-font;
 	font-style: italic;
 	.font-size(14);
@@ -104,10 +108,6 @@ li.pingback {
 		&:hover, &:active, &:focus {
 			color: darken( @red, 20% );
 		}
-	}
-
-	& + li.comment {
-		margin-top: @spacing;
 	}
 }
 
