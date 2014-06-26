@@ -25,11 +25,13 @@
 		display: inline-block;
 
 		&:hover > ul,
+		&.focus > ul,
 		a:focus + ul {
 			.show-dropdown;
 		}
 
 		&:hover a,
+		&.focus > a,
 		a:focus {
 			background: lighten( @black, 5% );
 		}

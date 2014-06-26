@@ -3,7 +3,7 @@
  *
  * Handles toggling the navigation menu for small screens.
  */
-( function() {
+( function( $ ) {
 	var container, button, menu;
 
 	container = document.getElementById( 'site-navigation' );
@@ -31,4 +31,10 @@
 		else
 			container.className += ' toggled';
 	};
-} )();
+
+	// make dropdowns functional on focus
+	$( '.nav-wrapper' ).find( 'a' ).on( 'focus blur', function() {
+		console.log( 'test' );
+		$( this ).parents('li').toggleClass( 'focus' );
+	} );
+} )( jQuery );
