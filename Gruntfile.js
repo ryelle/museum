@@ -100,7 +100,9 @@ module.exports = function(grunt) {
 	// Register tasks.
 
 	// Build task.
-	grunt.registerTask('build', ['clean:all', 'copy:all', 'less:dist', 'concat:dist', 'clean:dist', 'compress:main']);
+	grunt.registerTask('build', ['clean:all', 'copy:all', 'less:dist', 'concat:dist', 'clean:dist']);
+
+	grunt.registerTask('package', ['build', 'compress:main']);
 
 	// Dev build
 	grunt.registerTask('dev', ['less:dev', 'concat:dev' ]);
