@@ -77,6 +77,17 @@ module.exports = function(grunt) {
 			}
 		},
 
+		wp_theme_check: {
+			options: {
+				path: '/srv/www/wordpress-trunk'
+			},
+			museum: {
+				options: {
+					theme: 'museum/build'
+				}
+			}
+		},
+
 		compress: {
 			main: {
 				options: {
@@ -102,7 +113,7 @@ module.exports = function(grunt) {
 	// Build task.
 	grunt.registerTask('build', ['clean:all', 'copy:all', 'less:dist', 'concat:dist', 'clean:dist']);
 
-	grunt.registerTask('package', ['build', 'compress:main']);
+	grunt.registerTask('package', ['build', 'wp_theme_check', 'compress:main']);
 
 	// Dev build
 	grunt.registerTask('dev', ['less:dev', 'concat:dev' ]);
