@@ -34,7 +34,6 @@
 
 	// make dropdowns functional on focus
 	$( '.nav-wrapper' ).find( 'a' ).on( 'focus blur', function() {
-		console.log( 'test' );
 		$( this ).parents('li').toggleClass( 'focus' );
 	} );
 } )( jQuery );
