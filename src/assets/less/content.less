@@ -198,6 +198,16 @@ body.archive {
 				display: block;
 			}
 
+			img {
+				-webkit-transform: scale(1.05);
+				transform: scale(1.05);
+			}
+
+			&:hover .entry-image img {
+				-webkit-transform: scale(1);
+				transform: scale(1);
+			}
+
 			&.no-image {
 				&:before{
 					padding-top: 0;
