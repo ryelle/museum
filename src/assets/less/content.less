@@ -139,7 +139,16 @@ body.archive {
 
 			img {
 				height: 100%;
+				-webkit-transition: -webkit-transform 0.35s;
+				transition: transform 0.35s;
+				-webkit-transform: scale(1.15);
+				transform: scale(1.15);
 			}
+		}
+
+		&:hover .entry-image img {
+			-webkit-transform: scale(1);
+			transform: scale(1);
 		}
 
 		&:nth-of-type(even){
