@@ -43,6 +43,7 @@ function museum_setup() {
 	add_post_type_support( 'attachment:audio', 'thumbnail' );
 	add_post_type_support( 'attachment:video', 'thumbnail' );
 	add_theme_support( 'post-thumbnails', array( 'post', 'page', 'attachment:audio', 'attachment:video' ) );
+	add_image_size( 'single', $content_width * 2 );
 	set_post_thumbnail_size( $content_width, $content_width, true );
 
 	// This theme uses wp_nav_menu() in one location.
