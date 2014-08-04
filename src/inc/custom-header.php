@@ -44,11 +44,11 @@ function museum_custom_header_options() {
 ?>
 <table class="form-table">
 <tr class="displaying-header-text">
-	<th scope="row"><?php _e( 'Text Position', 'musuem' ); ?></th>
+	<th scope="row"><?php _e( 'Text Position', 'museum' ); ?></th>
 	<td>
 		<select name="header_position">
-			<option value="right" <?php selected( $header_position, 'right' ); ?>><?php _e( 'Right of image', 'musuem' ); ?></option>
-			<option value="below" <?php selected( $header_position, 'below' ); ?>><?php _e( 'Below image', 'musuem' ); ?></option>
+			<option value="right" <?php selected( $header_position, 'right' ); ?>><?php _e( 'Right of image', 'museum' ); ?></option>
+			<option value="below" <?php selected( $header_position, 'below' ); ?>><?php _e( 'Below image', 'museum' ); ?></option>
 		</select>
 	</td>
 </tr>
