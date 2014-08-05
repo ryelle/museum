@@ -34,5 +34,14 @@ Genericons: GNU General Public License v2.0
 
 ### Changelog
 
+Version 0.1.5
+* Add new image size for single posts, so we don't force square crop on single images (#45)
+* Fix typo in textdomain, thanks Drivingralle
+* Update RTL css
+* Remove a stray `console.log` from navigation.js
+* CSS tweaks: quote styling (#39), animation on image hover & focus (#42)
+* Editor style, content needed space in TinyMCE
+* Update Theme URI
+
 Version 0.1.0
 * First public release
