@@ -119,6 +119,6 @@ module.exports = function(grunt) {
 	grunt.registerTask('dev', ['less:dev', 'concat:dev' ]);
 
 	// Default task.
-	grunt.registerTask('default', ['dev']);
+	grunt.registerTask('default', ['build']);
 
 };
