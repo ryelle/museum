@@ -58,7 +58,7 @@ function museum_setup() {
 	// Use HTML5 elements for these features
 	add_theme_support( 'html5', array( 'comment-list', 'comment-form', 'search-form', 'gallery', 'caption' ) );
 
-	add_editor_style();
+	add_editor_style( array( 'editor-style.css', museum_fonts_url() ) );
 
 	// Remove default gallery styles
 	add_filter( 'use_default_gallery_style', '__return_false' );
@@ -135,17 +135,13 @@ function museum_fonts_url() {
 		$font_families = array();
 
 		if ( 'off' !== $quattrocento_sans )
-			$font_families[] = 'Quattrocento+Sans:400,700';
+			$font_families[] = urlencode( 'Quattrocento Sans:400,700' );
 
 		if ( 'off' !== $playfair_display )
-			$font_families[] = 'Playfair+Display:400,400italic,700italic';
+			$font_families[] = urlencode( 'Playfair Display:400,400italic,700italic' );
 
 		$protocol = is_ssl() ? 'https' : 'http';
-		$query_args = array(
-			'family' => implode( '|', $font_families ),
-			'subset' => 'latin,latin-ext',
-		);
-		$fonts_url = add_query_arg( $query_args, "$protocol://fonts.googleapis.com/css" );
+		$fonts_url = add_query_arg( 'family', implode( '|', $font_families ), "$protocol://fonts.googleapis.com/css" );
 	}
 
 	return $fonts_url;
@@ -170,32 +166,6 @@ function museum_fonts() {
 		wp_enqueue_style( 'museum-fonts', esc_url_raw( $fonts_url ), array(), null );
 }
 add_action( 'wp_enqueue_scripts', 'museum_fonts' );
-
-/**
- * Adds additional stylesheets to the TinyMCE editor if needed.
- *
- * @uses museum_fonts_url() to get the Google Font stylesheet URL.
- *
- * @since Museum 1.0
- *
- * @param string $mce_css CSS path to load in TinyMCE.
- * @return string
- */
-function museum_mce_css( $mce_css ) {
-	$fonts_url = museum_fonts_url();
-
-	if ( empty( $fonts_url ) )
-		return $mce_css;
-
-	if ( ! empty( $mce_css ) )
-		$mce_css .= ',';
-
-	$mce_css .= esc_url_raw( str_replace( ',', '%2C', $fonts_url ) );
-
-	return $mce_css;
-}
-add_filter( 'mce_css', 'museum_mce_css' );
-
 
 /**
  * Count the number of footer sidebars to enable dynamic classes for the footer.
