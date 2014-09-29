@@ -29,7 +29,6 @@
 	<footer class="entry-meta clear">
 		<div class="entry-author"><?php museum_posted_on(); ?></div>
 
-		<?php if ( 'post' == get_post_type() ) : ?>
 		<div class="entry-taxes"><?php
 			/* translators: used between list items, there is a space after the comma */
 			$category_list = get_the_category_list( ', ' );
@@ -61,7 +60,6 @@
 				$tag_list
 			);
 		?></div>
-		<?php endif; ?>
 
 	</footer><!-- .entry-meta -->
 </article><!-- #post-## -->
