@@ -173,27 +173,13 @@ add_action( 'wp_enqueue_scripts', 'museum_fonts' );
  * @since Museum 1.0
  */
 function museum_footer_class() {
-	$count = 0;
+	$class = 'one-column';
 
-	if ( is_active_sidebar( 'sidebar-1' ) )
-		$count++;
-
-	if ( is_active_sidebar( 'sidebar-2' ) )
-		$count++;
-
-	$class = '';
-
-	switch ( $count ) {
-		case '1':
-			$class = 'one-column';
-			break;
-		case '2':
-			$class = 'two-column';
-			break;
+	if ( is_active_sidebar( 'sidebar-1' ) && is_active_sidebar( 'sidebar-2' ) ) {
+		$class = 'two-column';
 	}
 
-	if ( $class )
-		echo $class;
+	echo esc_attr( $class );
 }
 
 
