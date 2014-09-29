@@ -74,10 +74,19 @@ add_filter( 'wp_title', 'museum_wp_title', 10, 2 );
  * @return array
  */
 function museum_post_class( $classes, $class, $post_id ) {
-	if ( !is_singular() && has_post_thumbnail( $post_id ) )
-		$classes[] = 'with-image';
-	elseif ( !is_singular() && !has_post_thumbnail( $post_id ) )
-		$classes[] = 'no-image';
+	if ( ! is_singular() ) {
+		if ( has_post_thumbnail( $post_id ) ) {
+			$classes[] = 'with-image';
+		} elseif ( ! has_post_thumbnail( $post_id ) ) {
+			$classes[] = 'no-image';
+		}
+
+		if ( get_the_title( $post_id ) ) {
+			$classes[] = 'with-title';
+		} elseif ( ! get_the_title( $post_id ) ) {
+			$classes[] = 'no-title';
+		}
+	}
 
 	return $classes;
 }

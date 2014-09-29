@@ -10,7 +10,8 @@
 		margin: @spacing/4 0 0;
 	}
 
-	.no-title p {
+	// If a p directly follows .read-more, there was no title.
+	.read-more + p {
 		margin-top: 0;
 	}
 }
@@ -182,7 +183,7 @@ body.archive {
 			}
 		}
 
-		&:hover .entry-header {
+		&.with-title:hover .entry-header {
 			opacity: 1;
 		}
 
