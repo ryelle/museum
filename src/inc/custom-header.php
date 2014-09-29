@@ -90,7 +90,7 @@ function museum_header_style() {
 	?>
 		.site-title a,
 		.site-description {
-			color: #<?php echo $header_text_color; ?>;
+			color: #<?php echo esc_attr( $header_text_color ); ?>;
 		}
 	<?php endif; ?>
 	</style>
@@ -102,7 +102,7 @@ if ( ! function_exists( 'museum_admin_header_style' ) ) :
 /**
  * Styles the header image displayed on the Appearance > Header admin panel.
  *
- * Also saves the header position. 
+ * Also saves the header position.
  * @todo do via JS/ajax to remove unrelated functionality here, and auto-update preview
  *
  * @see museum_custom_header_setup().
@@ -152,14 +152,14 @@ if ( ! function_exists( 'museum_admin_header_image' ) ) :
  * @see museum_custom_header_setup().
  */
 function museum_admin_header_image() {
-	$style = sprintf( ' style="color:#%s;"', get_header_textcolor() );
+	$style = sprintf( ' style="color:#%s;"', esc_attr( get_header_textcolor() ) );
 	$header_position = get_theme_mod( 'header_position', 'right' );
 ?>
-	<div id="headimg" class="site-branding text-<?php echo $header_position; ?>">
+	<div id="headimg" class="site-branding text-<?php echo esc_attr( $header_position ); ?>">
 
 		<?php if ( get_header_image() ) : ?>
 		<div class="site-logo">
-			<img src="<?php header_image(); ?>" width="<?php echo get_custom_header()->width; ?>" height="<?php echo get_custom_header()->height; ?>">
+			<img src="<?php header_image(); ?>" width="<?php echo absint( get_custom_header()->width ); ?>" height="<?php echo absint( get_custom_header()->height ); ?>">
 		</div>
 		<?php endif; // End header image check. ?>
 

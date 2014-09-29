@@ -36,12 +36,12 @@
 
 	<header id="masthead" class="site-header" role="banner">
 		<?php $header_position = get_theme_mod( 'header_position', 'right' ); ?>
-		<div class="site-branding text-<?php echo $header_position; ?>">
+		<div class="site-branding text-<?php echo esc_attr( $header_position ); ?>">
 
 			<?php if ( get_header_image() ) : ?>
 			<div class="site-logo">
 				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
-				<img src="<?php header_image(); ?>" width="<?php echo get_custom_header()->width; ?>" height="<?php echo get_custom_header()->height; ?>">
+				<img src="<?php header_image(); ?>" width="<?php echo absint( get_custom_header()->width ); ?>" height="<?php echo absint( get_custom_header()->height ); ?>">
 				</a>
 			</div>
 			<?php endif; // End header image check. ?>
