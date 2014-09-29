@@ -62,7 +62,7 @@ if ( post_password_required() ) {
 	<?php endif; ?>
 
 	<?php comment_form( array(
-		'title_reply'=> __( 'Comment on this post', 'museum' ),
+		'title_reply'    => __( 'Comment on this post', 'museum' ),
 		'title_reply_to' => __( 'Reply to %', 'museum' ),
 	) ); ?>
 

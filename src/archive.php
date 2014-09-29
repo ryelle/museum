@@ -39,10 +39,10 @@ get_header(); ?>
 							_e( 'Asides', 'museum' );
 
 						elseif ( is_tax( 'post_format', 'post-format-gallery' ) ) :
-							_e( 'Galleries', 'museum');
+							_e( 'Galleries', 'museum' );
 
 						elseif ( is_tax( 'post_format', 'post-format-image' ) ) :
-							_e( 'Images', 'museum');
+							_e( 'Images', 'museum' );
 
 						elseif ( is_tax( 'post_format', 'post-format-video' ) ) :
 							_e( 'Videos', 'museum' );

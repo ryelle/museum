@@ -15,7 +15,7 @@
 
 		<header class="entry-header">
 			<span class="read-more"><?php echo __( 'Read Post', 'museum' ); ?> &rsaquo;</span>
-			<?php the_title('<h2 class="entry-title">', '</h2>'); ?>
+			<?php the_title( '<h2 class="entry-title">', '</h2>' ); ?>
 			<div class="entry-excerpt"><?php the_excerpt(); ?></div>
 		</header><!-- .entry-header -->
 	</a>

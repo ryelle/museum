@@ -17,7 +17,7 @@
 
 <?php wp_head(); ?>
 <!--[if lt IE 9]>
-<script src="<?php echo get_template_directory_uri(); ?>/assets/js/html5shiv.js"></script>
+<script src="<?php echo esc_url( get_template_directory_uri(). '/assets/js/html5shiv.js' ); ?>"></script>
 <![endif]-->
 
 </head>

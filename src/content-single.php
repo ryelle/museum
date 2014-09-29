@@ -12,7 +12,7 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="entry-header">
-		<?php the_title('<h1 class="entry-title">','</h1>'); ?>
+		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 	</header><!-- .entry-header -->
 
 	<div class="entry-content">
@@ -43,7 +43,6 @@
 				} else {
 					$meta_text = '';
 				}
-
 			} else {
 				// But this blog has loads of categories so we should probably display them here
 				if ( '' != $tag_list ) {
@@ -51,7 +50,6 @@
 				} else {
 					$meta_text = __( '<span class="entry-categories"><div class="genericon genericon-category"></div> %1$s</span>', 'museum' );
 				}
-
 			} // end check for categories on this blog
 
 			printf(
