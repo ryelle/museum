@@ -40,7 +40,7 @@ if ( post_password_required() ) {
 				 * define museum_comment() and that will be used instead.
 				 * See museum_comment() in inc/template-tags.php for more.
 				 */
-				wp_list_comments( array( 'callback' => 'museum_comment', 'avatar_size' => 65 ) );
+				wp_list_comments( array( 'avatar_size' => 65 ) );
 			?>
 		</ol><!-- .comment-list -->
 
