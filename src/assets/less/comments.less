@@ -1,17 +1,17 @@
 .bypostauthor { /*! Not used in this theme. */ }
 
-#comments {
+.comments-area {
 	border-top: 1px solid #eee;
 }
 
 .comments-title,
-#reply-title {
+.comment-reply-title {
 	margin: @spacing * 1.5 0 @spacing;
 	color: @red;
 	.font-size(30);
 }
 
-#reply-title {
+.comment-reply-title {
 	margin-bottom: @spacing/2;
 }
 
@@ -36,25 +36,25 @@ li.comment {
 
 		.comment-meta {
 			margin-bottom: @spacing/2;
+		}
 
-			.avatar {
-				float: left;
-				margin: 0 @spacing/2 @spacing/2 0;
-			}
+		.avatar {
+			float: left;
+			margin: 0 @spacing/2 @spacing/2 0;
+		}
 
-			.comment-metadata {
-				.big-red-font;
-				.font-size(12);
-				a { color: @text; }
-			}
+		.comment-metadata {
+			.big-red-font;
+			.font-size(12);
+			a { color: @text; }
+		}
 
-			.comment-author {
-				font-weight: @bold;
+		.comment-author {
+			font-weight: @bold;
 
-				cite { font-style: normal; }
+			cite { font-style: normal; }
 
-				a { color: @text; }
-			}
+			a { color: @text; }
 		}
 
 		.comment-content {
@@ -83,10 +83,10 @@ li.comment {
 		padding: 0 @spacing/2 @spacing/2;
 		overflow: hidden;
 		background-color: darken( white, 5% );
+	}
 
-		#reply-title {
-			margin-top: @spacing;
-		}
+	.comment-reply-title {
+		margin-top: @spacing;
 	}
 
 	li {
@@ -112,7 +112,7 @@ li.pingback {
 }
 
 .comment-respond {
-	#cancel-comment-reply-link {
+	.comment-reply-title a {
 		.big-red-font;
 		.font-size(16);
 	}
