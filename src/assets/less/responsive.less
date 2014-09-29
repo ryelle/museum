@@ -32,22 +32,17 @@
 @media screen and (max-width: 700px) {
 	body.blog,
 	body.archive {
-		.hentry {
+		.no-image {
+			&:before{
+				padding-top: 0;
+			}
 
-			&.no-image {
-				&:before{
-					padding-top: 0;
-				}
-
-				padding: @spacing/2;
-
-				.post-link, .entry-header {
-					position: relative;
-					top: auto;
-					left: auto;
-					bottom: auto;
-					right: auto;
-				}
+			.post-link, .entry-header {
+				position: relative;
+				top: auto;
+				left: auto;
+				bottom: auto;
+				right: auto;
 			}
 		}
 	}
