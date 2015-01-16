@@ -21,8 +21,6 @@ if ( ! function_exists( 'museum_setup' ) ) :
  * as indicating support for post thumbnails.
  */
 function museum_setup() {
-	global $content_width;
-
 	/*
 	 * Make theme available for translation.
 	 * Translations can be filed in the /languages/ directory.
@@ -43,8 +41,8 @@ function museum_setup() {
 	add_post_type_support( 'attachment:audio', 'thumbnail' );
 	add_post_type_support( 'attachment:video', 'thumbnail' );
 	add_theme_support( 'post-thumbnails', array( 'post', 'page', 'attachment:audio', 'attachment:video' ) );
-	add_image_size( 'single', $content_width * 2 );
-	set_post_thumbnail_size( $content_width, $content_width, true );
+	add_image_size( 'single', 1840, 9999 );
+	set_post_thumbnail_size( 920, 920, true );
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
@@ -58,6 +56,7 @@ function museum_setup() {
 	// Use HTML5 elements for these features
 	add_theme_support( 'html5', array( 'comment-list', 'comment-form', 'search-form', 'gallery', 'caption' ) );
 
+	// Adds additional stylesheets to the TinyMCE editor if needed.
 	add_editor_style( array( 'editor-style.css', museum_fonts_url() ) );
 
 	// Remove default gallery styles
@@ -111,8 +110,6 @@ add_action( 'wp_enqueue_scripts', 'museum_scripts' );
  * The use of Quattrocento Sans and Playfair Display by default is
  * localized. For languages that use characters not supported by either
  * font, the font can be disabled.
- *
- * @since Museum 1.0
  *
  * @return string Font stylesheet or empty string if disabled.
  */
