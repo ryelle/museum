@@ -10,7 +10,7 @@
 	if ( ! container )
 		return;
 
-	button = container.getElementsByTagName( 'h1' )[0];
+	button = container.getElementsByTagName( 'button' )[0];
 	if ( 'undefined' === typeof button )
 		return;
 
@@ -34,6 +34,6 @@
 
 	// make dropdowns functional on focus
 	$( '.nav-wrapper' ).find( 'a' ).on( 'focus blur', function() {
-		$( this ).parents('li').toggleClass( 'focus' );
+		$( this ).parents( 'li' ).toggleClass( 'focus' );
 	} );
 } )( jQuery );

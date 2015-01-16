@@ -26,7 +26,7 @@
 <div id="page" class="hfeed site">
 
 	<nav id="site-navigation" class="main-navigation" role="navigation">
-		<h1 class="menu-toggle"><?php _e( 'Menu', 'museum' ); ?></h1>
+		<button class="menu-toggle"><?php _e( 'Menu', 'museum' ); ?></button>
 		<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'museum' ); ?></a>
 		<div class="nav-wrapper <?php museum_menu_class(); ?>">
 			<?php
