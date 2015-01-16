@@ -124,14 +124,15 @@ body.archive {
 		right: 0;
 		padding: @spacing/2;
 		overflow: hidden;
+	}
 
-		&:focus {
-			outline: none;
-			box-shadow: 0 0 5px fadeout( black, 50% );
+	.post-link:focus,
+	.focus .post-link {
+		outline: none;
+		box-shadow: 0 0 5px fadeout( black, 50% );
 
-			.entry-header {
-				opacity: 1;
-			}
+		.entry-header {
+			opacity: 1;
 		}
 	}
 
@@ -152,6 +153,7 @@ body.archive {
 	}
 
 	.hentry:hover .entry-image img,
+	.focus .entry-image img,
 	a:focus .entry-image img {
 		-webkit-transform: scale(1);
 		transform: scale(1);
