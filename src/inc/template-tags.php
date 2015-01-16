@@ -70,6 +70,35 @@ function museum_post_nav() {
 }
 endif;
 
+if ( ! function_exists( 'museum_attachment_media' ) ) :
+/**
+ * Display attachment media
+ */
+function museum_attachment_media() {
+	$caption = get_the_excerpt();
+	if ( $caption ) echo '<div class="wp-caption">';
+
+	if ( wp_attachment_is_image() ) {
+		echo wp_get_attachment_link( 0, 'post-thumbnail', false );
+	} elseif ( 0 === strpos( $post->post_mime_type, 'video' ) ) {
+		$meta = wp_get_attachment_metadata( get_the_ID() );
+		$atts = array( 'src' => wp_get_attachment_url() );
+		if ( ! empty( $meta['width'] ) && ! empty( $meta['height'] ) ) {
+			$atts['width'] = ( int ) $meta['width'];
+			$atts['height'] = ( int ) $meta['height'];
+		}
+		echo wp_video_shortcode( $atts );
+	} elseif ( 0 === strpos( $post->post_mime_type, 'audio' ) ) {
+		echo wp_audio_shortcode( array( 'src' => wp_get_attachment_url() ) );
+	}
+
+	if ( $caption ) {
+		printf( '<p class="wp-caption-text">%s</p>', $caption );
+		echo '</div>';
+	}
+}
+endif;
+
 if ( ! function_exists( 'museum_posted_on' ) ) :
 /**
  * Prints HTML with meta information for the current post-date/time and author.
