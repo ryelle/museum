@@ -76,7 +76,7 @@ get_header(); ?>
 					endif;
 
 					$bio = get_the_author_meta( 'description', get_the_author_meta( 'ID' ) );
-					if ( ! empty( $bio ) ):
+					if ( ! empty( $bio ) && is_author() ):
 						printf( '<div class="author-description">%s</div>', apply_filters( 'the_content', $bio ) );
 					endif;
 				?>
