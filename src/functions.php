@@ -168,22 +168,6 @@ function museum_fonts() {
 add_action( 'wp_enqueue_scripts', 'museum_fonts' );
 
 /**
- * Count the number of footer sidebars to enable dynamic classes for the footer.
- *
- * @since Museum 1.0
- */
-function museum_footer_class() {
-	$class = 'one-column';
-
-	if ( is_active_sidebar( 'sidebar-1' ) && is_active_sidebar( 'sidebar-2' ) ) {
-		$class = 'two-column';
-	}
-
-	echo esc_attr( $class );
-}
-
-
-/**
  * Implement the Custom Header feature.
  */
 require get_template_directory() . '/inc/custom-header.php';

@@ -7,6 +7,20 @@
  * @package Museum
  */
 
+if ( ! function_exists( 'museum_footer_class' ) ) :
+/**
+ * Count the number of footer sidebars to enable dynamic classes for the footer.
+ */
+function museum_footer_class() {
+	$class = 'one-column';
+
+	if ( is_active_sidebar( 'sidebar-1' ) && is_active_sidebar( 'sidebar-2' ) ) {
+		$class = 'two-column';
+	}
+
+	echo esc_attr( $class );
+}
+endif;
 if ( ! function_exists( 'museum_paging_nav' ) ) :
 /**
  * Display navigation to next/previous set of posts when applicable.
