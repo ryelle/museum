@@ -28,9 +28,19 @@
 	<nav id="site-navigation" class="main-navigation" role="navigation">
 		<h1 class="menu-toggle"><?php _e( 'Menu', 'museum' ); ?></h1>
 		<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'museum' ); ?></a>
-		<div class="nav-wrapper">
-			<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_class' => 'main-menu' ) ); ?>
-			<?php wp_nav_menu( array( 'theme_location' => 'social', 'menu_class' => 'social-menu' ) ); ?>
+		<div class="nav-wrapper <?php museum_menu_class(); ?>">
+			<?php
+				wp_nav_menu( array(
+					'theme_location'  => 'primary',
+					'container_class' => 'main-menu'
+				) );
+
+				wp_nav_menu( array(
+					'theme_location'  => 'social',
+					'container_class' => 'social-menu',
+					'fallback_cb' => false
+				) );
+			?>
 		</div>
 	</nav><!-- #site-navigation -->
 

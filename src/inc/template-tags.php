@@ -21,6 +21,22 @@ function museum_footer_class() {
 	echo esc_attr( $class );
 }
 endif;
+
+if ( ! function_exists( 'museum_menu_class' ) ) :
+/**
+ * Add dynamic class to nav wrapper contingent on social nav menu being active.
+ */
+function museum_menu_class() {
+	$class = '';
+
+	if ( has_nav_menu( 'social' ) ) {
+		$class = 'has-social-menu';
+	}
+
+	echo esc_attr( $class );
+}
+endif;
+
 if ( ! function_exists( 'museum_paging_nav' ) ) :
 /**
  * Display navigation to next/previous set of posts when applicable.
