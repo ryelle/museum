@@ -28,14 +28,14 @@ if ( ! function_exists( 'museum_paging_nav' ) ) :
  * @return void
  */
 function museum_paging_nav() {
+	$class = '';
+
 	// Don't print empty markup if there's only one page.
 	if ( $GLOBALS['wp_query']->max_num_pages < 2 ) {
 		return;
 	}
 	if ( get_next_posts_link() && get_previous_posts_link() ){
 		$class = 'both-links';
-	} else {
-		$class = 'one-link';
 	}
 	?>
 	<nav class="navigation paging-navigation <?php echo $class; ?>" role="navigation">
