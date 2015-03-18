@@ -40,6 +40,7 @@ Version 0.1.6
 * Add featured images to pages
 * Fix dropdowns on touchscreens
 * Mobile menu improvements
+* Switch to 4.1 theme functions (pagination, title tag, archive info)
 * Added a content-search.php to handle search-specific display (child themes may need to update)
 * Clean up CSS - use classes, not IDs, and try to clean up overcomplicated selectors.
 * Add font fallbacks
