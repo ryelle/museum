@@ -31,7 +31,7 @@ get_header(); ?>
 
 			<?php endwhile; ?>
 
-			<?php museum_paging_nav(); ?>
+			<?php the_posts_navigation( array( 'next_text' => __( 'Newer posts <span class="meta-nav">&rarr;</span>', 'museum' ), 'prev_text' => __( '<span class="meta-nav">&larr;</span> Older posts', 'museum' ) ) ); ?>
 
 		<?php else : ?>
 
