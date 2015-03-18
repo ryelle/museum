@@ -88,7 +88,7 @@ add_filter( 'the_password_form', 'museum_password_form' );
 
 if ( version_compare( $GLOBALS['wp_version'], '4.1', '<' ) ) :
 	/**
-	 * Filters wp_title to print a neat <title> tag based on what is being viewed.
+	 * Filters wp_title to print a neat `title` tag based on what is being viewed.
 	 *
 	 * @param string $title Default title text for current view.
 	 * @param string $sep Optional separator.
