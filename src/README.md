@@ -36,6 +36,14 @@ Genericons: GNU General Public License v2.0
 
 ## Changelog
 
+Version 0.1.6
+* Add featured images to pages
+* Fix dropdowns on touchscreens
+* Mobile menu improvements
+* Added a content-search.php to handle search-specific display (child themes may need to update)
+* Clean up CSS - use classes, not IDs, and try to clean up overcomplicated selectors.
+* Add font fallbacks
+
 Version 0.1.5
 * Add new image size for single posts, so we don't force square crop on single images (#45)
 * Fix typo in textdomain, thanks Drivingralle
