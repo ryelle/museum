@@ -36,6 +36,10 @@ Genericons: GNU General Public License v2.0
 
 ## Changelog
 
+Version 0.1.7
+* Fix for Jetpack Infinite Scroll, re-add the `infinite-scroll` body class to prevent duplicate post nav
+* Minor styling fixes for navigation
+
 Version 0.1.6
 * Add featured images to pages
 * Fix dropdowns on touchscreens
