@@ -5,6 +5,10 @@
  * @package Museum
  */
 
+if ( ! defined( 'MUSEUM_VERSION' ) ) {
+	define( 'MUSEUM_VERSION', '0.1.7' );
+}
+
 /**
  * Set the content width based on the theme's design and stylesheet.
  */
@@ -100,15 +104,15 @@ add_action( 'widgets_init', 'museum_widgets_init' );
  * Enqueue scripts and styles.
  */
 function museum_scripts() {
-	wp_enqueue_style( 'museum-style', get_stylesheet_uri() );
+	wp_enqueue_style( 'museum-style', get_stylesheet_uri(), array(), MUSEUM_VERSION );
 
-	wp_enqueue_script( 'museum-navigation', get_template_directory_uri() . '/assets/js/navigation.js', array( 'jquery' ), '20150319', true );
+	wp_enqueue_script( 'museum-navigation', get_template_directory_uri() . '/assets/js/navigation.js', array( 'jquery' ), MUSEUM_VERSION, true );
 
 	wp_enqueue_script( 'museum-skip-link-focus-fix', get_template_directory_uri() . '/assets/js/skip-link-focus-fix.js', array(), '20130115', true );
 
 	// Only load if Jetpack is active and version is >= 3.4
 	if ( defined( 'JETPACK__VERSION' ) && version_compare( JETPACK__VERSION, '3.4', '>=' ) ) {
-		wp_enqueue_script( 'museum-jetpack-fix', get_template_directory_uri() . '/assets/js/jetpack-infscroll-fix.js', array(), '20150319', true );
+		wp_enqueue_script( 'museum-jetpack-fix', get_template_directory_uri() . '/assets/js/jetpack-infscroll-fix.js', array(), MUSEUM_VERSION, true );
 	}
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
